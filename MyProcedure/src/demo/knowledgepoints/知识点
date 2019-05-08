@@ -1,0 +1,16 @@
+1. 序列化。
+2. 反序列化。
+3. 代理类（section）：通过代理接口InvocationHandler和Proxy，实现AOP效果。
+4. JDK1.8: stream的用法
+5. JDK1.8: Lambda 表达式
+6. 反射
+7. 锁：乐观锁和悲观锁。
+8. ArrayDeque双端队列
+8. 区块链。
+6. Lombok : 通过注解，自动实现setter/getter、equals、canEqual、hashCode、toString方法。
+7. JUnit4: 单元测试
+8. Spring boot : 微服务。
+9. Spring Cloud ：是一系列框架的有序集合
+10.Gradle: 项目管理工具
+11.thymclcat ：代替JSP
+12 h2： 内存数据库
