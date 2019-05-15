@@ -1,5 +1,6 @@
 package demo.knowledgepoints.Unsafe;
 
+import demo.knowledgepoints.BinarySystem;
 import sun.misc.Unsafe;
 import java.lang.reflect.Field;
 
@@ -38,9 +39,11 @@ public class Momory {
             e.printStackTrace();
         }
 
-        long oneHundred = 100;
-        long twoHundred = 10;
-        byte size = 1;
+        String oneHundred = "fgh";
+
+        String result = BinarySystem.toBinary(oneHundred);
+        System.out.println(result);
+        int size = 1024;
 
         /*
          * 调用allocateMemory分配内存
@@ -50,14 +53,14 @@ public class Momory {
         /*
          * 将100写入到内存中
          */
-        unsafe.putAddress(memoryAddress, oneHundred);
-        unsafe.putAddress(470446864, twoHundred);
+        unsafe.putAddress(memoryAddress, Long.parseLong(result));
         /*
          * 内存中读取数据
          */
-        long readValue = unsafe.getAddress(470446864);
+        long readValue = unsafe.getAddress(memoryAddress);
 
         System.out.println("Val : " + readValue);
         System.out.println("memoryAddress : " + memoryAddress);
+        unsafe.freeMemory(memoryAddress);
     }
 }
