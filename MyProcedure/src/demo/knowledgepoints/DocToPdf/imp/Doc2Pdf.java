@@ -18,7 +18,7 @@ public class Doc2Pdf {
     public static boolean getLicense() {
         boolean result = false;
         try {
-            File file = new File("E:\\WorkSpace\\MyProcedure\\WebRoot\\WEB-INF\\classes\\license.xml"); // 新建一个空白pdf文档
+            File file = new File("E:\\GitHub\\study\\MyProcedure\\WebRoot\\WEB-INF\\classes\\license.xml"); // 新建一个空白pdf文档
             InputStream is = new FileInputStream(file); // license.xml应放在..\WebRoot\WEB-INF\classes路径下
             License aposeLic = new License();
             aposeLic.setLicense(is);
