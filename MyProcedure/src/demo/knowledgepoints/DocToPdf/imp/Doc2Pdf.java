@@ -11,6 +11,10 @@ import com.aspose.words.*;
 
 public class Doc2Pdf {
 
+    /*****
+     * 需要引入jar包：aspose-words-15.8.0-jdk16.jar
+     * @param args
+     */
     public static void main(String[] args) {
         doc2pdf("E:/WorkSpace/MyProcedure/src/demo/knowledgepoints/DocToPdf/PDF/资金运营平台需求说明书V2.65.docx","E:/WorkSpace/MyProcedure/src/demo/knowledgepoints/DocToPdf/PDF/pdf1.pdf");
     }

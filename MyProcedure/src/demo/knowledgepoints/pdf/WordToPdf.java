@@ -7,7 +7,10 @@ import com.jacob.com.Variant;
 import java.io.File;
 
 public class WordToPdf {
-
+    /*****
+     * 需要引入jar包：jacob.jar
+     * @param args
+     */
     public static void main(String[] args) {
         File targer = null;
         File docFile = null;

@@ -15,8 +15,10 @@ public class Momory {
          */
         Unsafe unsafe = null;
         Field field = null;
+
         try {
             field = sun.misc.Unsafe.class.getDeclaredField("theUnsafe");
+
             /*
              * private static final Unsafe theUnsafe = new Unsafe();
              *
@@ -39,7 +41,7 @@ public class Momory {
             e.printStackTrace();
         }
 
-        String oneHundred = "fgh";
+        String oneHundred = "fg";
 
         String result = BinarySystem.toBinary(oneHundred);
         System.out.println(result);

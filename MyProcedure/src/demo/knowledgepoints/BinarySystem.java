@@ -46,7 +46,7 @@ public class BinarySystem {
             //toBinaryString(int i)返回变量的二进制表示的字符串
             //toHexString(int i) 八进制
             //toOctalString(int i) 十六进制
-            result +=Integer.toBinaryString(strChar[i])+ " ";
+            result +=Integer.toBinaryString(strChar[i])+ "";
         }
         return result;
     }

@@ -8,6 +8,10 @@ import com.lowagie.text.pdf.PdfReader;
 import java.io.FileOutputStream;
 
 public class PdfMerge {
+    /*****
+     * 需要引入jar包：iText-2.1.7.jar
+     * @param args
+     */
     public static void main(String[] args) {
         String[] files = { "E:\\WorkSpace\\MyProcedure\\src\\demo\\knowledgepoints\\pdf\\merge\\pdf\\1.pdf", "E:\\WorkSpace\\MyProcedure\\src\\demo\\knowledgepoints\\pdf\\merge\\pdf\\2.pdf", "E:\\WorkSpace\\MyProcedure\\src\\demo\\knowledgepoints\\pdf\\merge\\pdf\\3.pdf" };
         String savepath = "E:\\WorkSpace\\MyProcedure\\src\\demo\\knowledgepoints\\pdf\\merge\\pdf\\temp.pdf";
