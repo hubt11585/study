@@ -19,6 +19,10 @@ public class Demo2 {
         return demo2;
     }
 
+    public void print(){
+        System.out.println("恭喜成功获取Demo2！");
+    }
+
     //通过静态代码块创建实体类。
     static {
         demo2 = new Demo2();
