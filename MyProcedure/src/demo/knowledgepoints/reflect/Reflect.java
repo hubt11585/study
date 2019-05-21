@@ -36,8 +36,9 @@ public class Reflect {
 
             //然后我们再来创建一个Demo2.
             Field field2 = Demo2.class.getDeclaredField("demo2");
-            demo2 = (Demo2)field1.get(null);
-            //发现打印日志并没有调用：demo2.print()？
+            //私有方法需要将：field2.setAccessible(true) ，才能获取到实例类
+            field2.setAccessible(true);
+            demo2 = (Demo2)field2.get(null);
             demo2.print();
 
         } catch (NoSuchFieldException e) {
