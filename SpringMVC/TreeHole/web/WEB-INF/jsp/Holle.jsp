@@ -11,6 +11,6 @@
     <title>我们是一个树洞</title>
   </head>
   <body>
-  <a  href="common/gettest.do">Hello</a>
+  <a href="common/gettest.do">Hello</a>
   </body>
 </html>
