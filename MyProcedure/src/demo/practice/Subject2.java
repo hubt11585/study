@@ -18,6 +18,7 @@ public class Subject2 {
      */
     public static void getPrimeNumber(int a,int b){
         int tmp = 0;
+        int sum = 0;
         if(a >= b){
             System.out.println("a不能大于等于b！");
         }
@@ -30,8 +31,10 @@ public class Subject2 {
                 }
             }
             if(tmp==0){
+                sum += 1;
                 System.out.println("素数："+i);
             }
         }
+        System.out.println("存在素数数量："+sum);
     }
 }
