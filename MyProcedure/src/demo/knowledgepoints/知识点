@@ -20,3 +20,4 @@
 16 reflect 反射：通过类的class获取到实体类和方法
 17 http ：通过Http请求调用。
 18 scheduledtask ：线程管理案例：https://blog.csdn.net/money9sun/article/details/88575704?tdsourcetag=s_pctim_aiomsg
+19 volatile ：
