@@ -20,6 +20,16 @@ public class ScheduledTaskTot {
     /** 间隔时间 */
     long delay;
 
+    /**
+     * 创建一个需要定时的任务
+     * @param taskId
+     * @param className
+     * @param method
+     * @param initialDelay
+     * @param delay
+     * @param beginTime（执行开始时间）
+     * @param endTime（执行结束时间）
+     */
     public ScheduledTaskTot(String taskId, String className, String method, long initialDelay, long delay, String beginTime, String endTime) {
         this.taskId = taskId;
         this.className = className;

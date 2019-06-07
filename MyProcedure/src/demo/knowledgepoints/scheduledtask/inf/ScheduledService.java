@@ -3,6 +3,7 @@ package demo.knowledgepoints.scheduledtask.inf;
 import demo.knowledgepoints.scheduledtask.iml.ScheduledTaskTot;
 
 public interface ScheduledService {
+
     /**
      * 添加一个任务
      * @author Eric

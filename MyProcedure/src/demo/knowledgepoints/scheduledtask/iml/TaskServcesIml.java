@@ -10,7 +10,7 @@ public class TaskServcesIml implements TaskServcesInf {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("1------------------------");
+        System.out.println("Test1------------------------");
     }
     public void Test2(){
         try {
@@ -18,7 +18,7 @@ public class TaskServcesIml implements TaskServcesInf {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("2------------------------");
+        System.out.println("Test2------------------------");
     }
 
     public void Test3(){
@@ -27,6 +27,6 @@ public class TaskServcesIml implements TaskServcesInf {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("3------------------------");
+        System.out.println("Test3------------------------");
     }
 }
