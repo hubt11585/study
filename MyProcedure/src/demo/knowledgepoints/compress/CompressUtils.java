@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-public class CompressUtils {
+public class CompressUtils{
 
     public static void main(String[] args) {
 
