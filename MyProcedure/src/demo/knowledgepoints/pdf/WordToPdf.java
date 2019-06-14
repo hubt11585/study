@@ -14,7 +14,7 @@ public class WordToPdf {
     public static void main(String[] args) {
         File targer = null;
         File docFile = null;
-        docFile = new File("E:\\WorkSpace\\MyProcedure\\src\\demo\\knowledgepoints\\pdf\\merge\\pdf\\1.docx");
+        docFile = new File("E:/GitHub/study/MyProcedure/src/demo/knowledgepoints/pdf/merge/pdf/1.docx");
         //targer = new File(docFile.getAbsolutePath().split("\\.")[0] + ".pdf");
         //当文件路径为ip路径时，如：\\166.3.96.18\share\201712\151335250089154.doc，通过上面方法拆分会出错，变成\\166.pdf，所以更换采用以下方法
         targer = new File(docFile.getAbsolutePath().substring(0,docFile.getAbsolutePath().lastIndexOf(".")) + "34.pdf");

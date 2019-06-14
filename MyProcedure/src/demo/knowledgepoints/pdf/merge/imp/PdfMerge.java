@@ -13,16 +13,17 @@ public class PdfMerge {
      * @param args
      */
     public static void main(String[] args) {
-        String[] files = { "E:\\WorkSpace\\MyProcedure\\src\\demo\\knowledgepoints\\pdf\\merge\\pdf\\1.pdf", "E:\\WorkSpace\\MyProcedure\\src\\demo\\knowledgepoints\\pdf\\merge\\pdf\\2.pdf", "E:\\WorkSpace\\MyProcedure\\src\\demo\\knowledgepoints\\pdf\\merge\\pdf\\3.pdf" };
-        String savepath = "E:\\WorkSpace\\MyProcedure\\src\\demo\\knowledgepoints\\pdf\\merge\\pdf\\temp.pdf";
+        String[] files = { "E:/GitHub/study/MyProcedure/src/demo/knowledgepoints/pdf/merge/pdf/1.pdf", "E:/GitHub/study/MyProcedure/src/demo/knowledgepoints/pdf/merge/pdf/2.pdf", "E:/GitHub/study/MyProcedure/src/demo/knowledgepoints/pdf/merge/pdf/3.pdf" };
+        String savepath = "E:/GitHub/study/MyProcedure/src/demo/knowledgepoints/pdf/merge/pdf/temp.pdf";
         mergePdfFiles(files, savepath);
-    } /*
-         * * 合並pdf文件 * * @param files 要合並文件數組(絕對路徑如{ "e:\\1.pdf", "e:\\2.pdf" ,
-         * "e:\\3.pdf"}) * @param newfile
-         * 合並後新產生的文件絕對路徑如e:\\temp.pdf,請自己刪除用過後不再用的文件請 * @return boolean
-         * 產生成功返回true, 否則返回false
-         */
+    }
 
+    /**
+     * * 合並pdf文件 * * @param files 要合並文件數組(絕對路徑如{ "e:\\1.pdf", "e:\\2.pdf" ,
+     * "e:\\3.pdf"}) * @param newfile
+     * 合並後新產生的文件絕對路徑如e:\\temp.pdf,請自己刪除用過後不再用的文件請 * @return boolean
+     * 產生成功返回true, 否則返回false
+     */
     public static boolean mergePdfFiles(String[] files, String newfile) {
         boolean retValue = false;
         Document document = null;
