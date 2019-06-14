@@ -4,7 +4,7 @@ package demo.practice;
  * 【程序21】
  * 题目：求1+2!+3!+…+20!的和
  * 【程序22】
- * 题目：利用递归方法求5!。
+ * 题目：利用递归方法求5!。 
  */
 public class Subject21And22 {
 
