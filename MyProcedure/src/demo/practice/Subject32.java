@@ -51,6 +51,11 @@ public class Subject32 {
         }
     }
 
+    /**
+     * 获取杨辉三角数据
+     * @param num
+     * @return
+     */
     private static int[] yangHuiTriangle(int num) {
         if(num == 1){
             int[] arr = new int[]{1};
