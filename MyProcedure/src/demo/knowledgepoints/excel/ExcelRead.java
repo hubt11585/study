@@ -6,7 +6,7 @@ public class ExcelRead {
 
     public static void main(String[] args) {
         try {
-            String filepath = "src\\demo\\knowledgepoints\\file\\test.xls";
+            String filepath = "src\\demo\\knowledgepoints\\file\\test.xlsx";
             ExcelUnitl excelUnitl= new ExcelUnitl(filepath);
             /*** 对读取Excel表格内容测试***/
             Map<Integer, Map<Integer,Object>> map = excelUnitl.readExcelContent();
