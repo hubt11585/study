@@ -17,24 +17,32 @@ public class Subject2 {
      * @param b
      */
     public static void getPrimeNumber(int a,int b){
-        int tmp = 0;
         int sum = 0;
         if(a >= b){
             System.out.println("a不能大于等于b！");
         }
         for(int i=a;i<=b;i++){
-            tmp = 0;
-            for(int j=2;j<i;j++){
-                if(i%j == 0){
-                    tmp = 1;
-                    break;
-                }
-            }
-            if(tmp==0){
+            if(isPrimeNumber(i)){
                 sum += 1;
                 System.out.println("素数："+i);
             }
         }
         System.out.println("存在素数数量："+sum);
+    }
+
+    /**
+     * 判断num是否是一个素数
+     * @param i
+     * @return
+     */
+    private static boolean isPrimeNumber(int i) {
+        boolean flag = true;
+        for(int j=2;j <= i/2;j++){
+            if(i%j == 0){
+                flag = false;
+                break;
+            }
+        }
+        return flag;
     }
 }
