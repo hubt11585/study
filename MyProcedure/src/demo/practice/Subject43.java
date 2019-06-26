@@ -23,7 +23,7 @@ public class Subject43 {
         int divisorNum = 9;
         while(true){
             if(divisorNum%num == 0 ){
-                System.out.println("您输入的素数能被"+divisorNum+"整除");
+                System.out.println("您输入的素数能被"+divisorNum+"整除！");
                 break;
             }
             divisorNum = divisorNum + 9;
