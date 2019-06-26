@@ -5,6 +5,7 @@ import java.util.Scanner;
 /**
  * 【程序43】
  * 题目：判断一个素数能被几个9整除 （例如3能被9整除， 9除以3，等于3.） ，备注 ：数学除是后面的数除以前面的数
+ * 尽管如此，该题还是感觉没有意义。
  */
 public class Subject43 {
     public static void main(String[] args) {
@@ -23,7 +24,7 @@ public class Subject43 {
         int divisorNum = 9;
         while(true){
             if(divisorNum%num == 0 ){
-                System.out.println("您输入的素数能被"+divisorNum+"整除！");
+                System.out.println("您输入的素数能被"+divisorNum/9+"个9整除！");
                 break;
             }
             divisorNum = divisorNum + 9;
