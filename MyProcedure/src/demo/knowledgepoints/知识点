@@ -20,7 +20,7 @@
 16 reflect 反射：通过类的class获取到实体类和方法
 17 http ：通过Http请求调用。
 18 scheduledtask ：线程管理案例：https://blog.csdn.net/money9sun/article/details/88575704?tdsourcetag=s_pctim_aiomsg
-19 volatile ：
+19 volatile ：https://www.cnblogs.com/sunrunzhi/p/3930297.html
 20 base64编码: https://blog.csdn.net/wo541075754/article/details/81734770
                https://www.cnblogs.com/alter888/p/9140732.html
 21 compress: 压缩包，zip压缩。
