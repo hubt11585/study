@@ -20,6 +20,11 @@ public class Subject46 {
      */
     private static void encryption(int num) {
         char[] arr= (num+"").toCharArray();
+        for (int i = 0; i < arr.length/2; i++) {
+            char tmp = arr[i];
+            arr[i] = arr[arr.length-i-1];
+            arr[arr.length-i-1] = tmp;
+        }
         String cipherText = "";
         for (int i = 0; i < arr.length; i++) {
             int tmp = (arr[i]-'0'+5)%10;
