@@ -2,7 +2,7 @@ package demo.knowledgepoints.quicksort;
 
 public class QuickSort {
     public static void main(String args[]){
-        int[] num={1,2,1,2,3};
+        int[] num={4,5,2,9,6,4,0,2,4,7};
         new QuickSort().QuickSort(num,0,num.length-1);
         for(int n:num) {
             System.out.print(n+" ");
