@@ -1,17 +1,15 @@
 package demo.test;
 
 public class var {
-    byte x; short y; int z; long a; float b;
-    double c; char d; boolean e;
-    public static void main(String[] args){
-        var m=new var();
-        System.out.println(" 打印数据 x="+m.x);
-        System.out.println(" 打印数据 y="+m.y);
-        System.out.println(" 打印数据 z="+m.z);
-        System.out.println(" 打印数据 a="+m.a);
-        System.out.println(" 打印数据 b="+m.b);
-        System.out.println(" 打印数据 c="+m.c);
-        System.out.println(" 打印数据 d="+m.d);
-        System.out.println(" 打印数据 e="+m.e);
+    public static void main(String[] args) {
+        int a , b;
+        a = 10;
+        // 如果 a 等于 1 成立，则设置 b 为 20，否则为 30
+        b = (a == 1) ? 20 : 30;
+        System.out.println( "Value of b is : " +  b );
+
+        // 如果 a 等于 10 成立，则设置 b 为 20，否则为 30
+        b = (a == 10) ? 20 : 30;
+        System.out.println( "Value of b is : " + b );
     }
 }
