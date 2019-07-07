@@ -21,12 +21,14 @@ public class Subject2 {
         if(a >= b){
             System.out.println("a不能大于等于b！");
         }
+        System.out.print("素数：");
         for(int i=a;i<=b;i++){
             if(isPrimeNumber(i)){
                 sum += 1;
-                System.out.println("素数："+i);
+                System.out.print(i+" ");
             }
         }
+        System.out.println();
         System.out.println("存在素数数量："+sum);
     }
 

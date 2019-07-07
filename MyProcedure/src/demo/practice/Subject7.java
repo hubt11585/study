@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Subject7 {
     public static void main(String[] args) {
-        System.out.println("Çë³öÈë×Ö·û´®£º" );
+        System.out.println("ÇëÊäÈë×Ö·û´®£º" );
         Scanner scanner=new Scanner(System.in);
         scanner.useDelimiter("\n");
         String tmpStr = scanner.next();
