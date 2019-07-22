@@ -16,46 +16,34 @@ public class Subject62 {
     }
 
     public static List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> lists = new ArrayList<>();
-        int lenth = nums.length;
-        Arrays.sort(nums);   //给数组排序
-        for (int i = 1; i < lenth; i++) {
-            int tmp0 = nums[i];
-            int midLeft = i;
-            outterLoop:
-            while(true){
-                midLeft--;
-                if(midLeft < 0){
-                    break;
+        Arrays.sort(nums);
+        List<List<Integer>> tuples = new ArrayList<>();
+
+        for(int i = 0; i < nums.length-2; i++){
+            if(i > 0 && nums[i-1] == nums[i]) continue; //去重
+
+            int l = i+1, r = nums.length-1;
+            if(nums[l] < 0 && Integer.MIN_VALUE-nums[l] > nums[i]) continue; //如果溢出最小值则跳过
+            if(nums[i] > 0 && Integer.MAX_VALUE-nums[l] < nums[i]) break; //溢出最大值直接结束，不可能会有新的三元组出现了
+
+            while(l < r){
+                if(nums[r] > -nums[i]-nums[l]){
+                    while(l < r && nums[r-1] == nums[r]) r--; //右指针去重
+                    r--;
                 }
-                int begin = i;
-                int end = lenth-1;
-                while(begin <= end){
-                    int mid = (begin + end)/2+1 ;
-                    int tmp1 = tmp0 +nums[midLeft] + nums[mid];
-                    if(tmp1 == 0){
-                        List<Integer> list = new ArrayList<>();
-                        list.add(tmp0);
-                        list.add(nums[midLeft]);
-                        list.add(nums[mid]);
-                        lists.add(list);
-                        if(mid == lenth-1){
-                            break outterLoop; //跳出多层循环
-                        }else{
-                            break;
-                        }
-                    }else if(tmp1 > 0){
-                        end = mid;
-                    }else{
-                        begin = mid;
-                    }
-                    if(mid == lenth-1){
-                        break outterLoop; //跳出多层循环
-                    }
+                else if(nums[r] < -nums[i]-nums[l]){
+                    while(l < r && nums[l+1] == nums[l]) l++; //左指针去重
+                    l++;
+                }
+                else{
+                    tuples.add(Arrays.asList(nums[i],nums[l],nums[r]));
+                    while(l < r && nums[r-1] == nums[r]) r--; //左指针去重
+                    while(l < r && nums[l+1] == nums[l]) l++; //右指针去重
+                    r--;
+                    l++;
                 }
             }
         }
-
-        return lists;
+        return tuples;
     }
 }

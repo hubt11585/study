@@ -108,5 +108,4 @@ public class Subject18 {
             resultList.add(paramsList.get(k));
         }
     }
-
 }

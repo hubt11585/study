@@ -71,5 +71,4 @@ public class Subject14 {
         }
         return dayNum;
     }
-
 }

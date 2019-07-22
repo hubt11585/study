@@ -1,5 +1,6 @@
 package demo.test;
 
+
 public class var {
     public static void main(String[] args) {
         String s1 = "hello";
