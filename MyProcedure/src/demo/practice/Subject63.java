@@ -1,18 +1,21 @@
 package demo.practice;
-
-import java.util.Arrays;
-
 /**
  * 给定一个包括n 个整数的数组nums和 一个目标值target。找出nums中的三个整数，使得它们的和与target最接近。返回这三个数的和。
  * 假定每组输入只存在唯一答案。
  */
 public class Subject63 {
     public static void main(String[] args) {
-        int[] arr = new int[]{-1,2,1,-4};
-        int target = 1;
+        int[] arr = new int[]{1,1,1,1};
+        int target = 0;
         System.out.println(threeSumClosest(arr,target));
     }
 
+    /**
+     * 获取最接近的三个数之和
+     * @param nums
+     * @param target
+     * @return
+     */
     public static int threeSumClosest(int[] nums, int target) {
         int sum = 0;
         if(nums.length<=3){
@@ -21,29 +24,37 @@ public class Subject63 {
             }
             return sum;
         }
-        Arrays.sort(nums);
-        double d = target/3.0;
-        int begin = 1;
-        int end = nums.length-2;
-        int tmp = 0;
-        while(begin < end){
-            tmp = (begin+end)/2;
-            if(nums[tmp] == d){
-                break;
-            }else if(nums[tmp] < d){
-                begin = tmp;
-            }else{
-                end = tmp;
-            }
-            if(end - begin == 1){
-                break;
+        int max = Integer.MAX_VALUE;
+        int min = Integer.MIN_VALUE;
+        for (int i = 0; i < nums.length-2; i++) {
+            for (int j = i+1; j < nums.length-1; j++) {
+                for (int k = j+1; k < nums.length; k++) {
+                    int tmp = nums[i] + nums[j] + nums[k];
+                    if(tmp == target ){
+                        return target;
+                    }else if(tmp > target){
+                        if(tmp < max){
+                            max = tmp;
+                        }
+                    }else{
+                        if(tmp > min){
+                            min = tmp;
+                        }
+                    }
+                }
             }
         }
-        sum = nums[tmp] + nums[tmp-1] + nums[tmp+1];
-        if(tmp == end){
-            return nums[tmp] + nums[tmp-1] + nums[tmp+1];
+        if(max == Integer.MAX_VALUE){
+            return min;
+        }
+        if(min == Integer.MIN_VALUE){
+            return max;
+        }
+        if(Math.abs(max-target) <= Math.abs(target-min)){
+            sum = max;
         }else{
-            return nums[tmp] + nums[tmp-1] + nums[tmp+1];
+            sum = min;
         }
+        return sum;
     }
 }
