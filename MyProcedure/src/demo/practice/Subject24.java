@@ -28,6 +28,4 @@ public class Subject24 {
             System.out.print(arrStr[i]+" ");
         }
     }
-
-
 }

@@ -22,6 +22,4 @@ public class Subject23 {
             return getAge(p0-1)+2;
         }
     }
-
-
 }
