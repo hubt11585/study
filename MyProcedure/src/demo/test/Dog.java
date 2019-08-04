@@ -1,12 +1,31 @@
 package demo.test;
 
 public class Dog{
+
+    /**
+     * 带参构造函数
+     * @param name
+     * @param age
+     */
+    public Dog(String name,int age){
+        this.age = age;
+        this.name = name;
+    }
+
+    /**
+     * 无惨构造函数
+     */
+    public Dog(){}
+
     String name;
     int age;
-    public void bark(){ // 汪汪叫
-        System.out.println("汪汪，不要过来");
+
+    public void ptint(){
+        System.out.println("name = "+this.name+";age = "+age);
     }
-    public void hungry(){ // 饥饿
-        System.out.println("主人，我饿了");
+
+    public static void main(String[] args) {
+        new Dog().ptint();
+        new Dog("花花",9).ptint();
     }
 }

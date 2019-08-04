@@ -27,6 +27,54 @@ public class MyBase64 {
             //½âÂë
             System.out.println(new String(decoder.decode(encodedText), "UTF-8"));
 
+            System.out.println(intToByte8(112));
+
+            System.out.println(intToByte8(112));
+            System.out.println(intToByte8(97));
+            System.out.println(intToByte8(103));
+            System.out.println(intToByte8(101));
+            System.out.println(intToByte8(78));
+            System.out.println(intToByte8(111));
+            System.out.println(intToByte8(61));
+            System.out.println(intToByte8(49));
+            System.out.println(intToByte8(38));
+            System.out.println(intToByte8(112));
+            System.out.println(intToByte8( 97));
+            System.out.println(intToByte8(103));
+            System.out.println(intToByte8(101));
+            System.out.println(intToByte8(83));
+            System.out.println(intToByte8(105));
+            System.out.println(intToByte8(122));
+            System.out.println(intToByte8(101));
+            System.out.println(intToByte8(61));
+            System.out.println(intToByte8(49));
+            System.out.println(intToByte8(48));
+            System.out.println(intToByte8(48));
+            System.out.println(intToByte8(38));
+            System.out.println(intToByte8(102));
+            System.out.println(intToByte8(117));
+            System.out.println(intToByte8(110));
+            System.out.println(intToByte8(100));
+            System.out.println(intToByte8(73));
+            System.out.println(intToByte8(100));
+            System.out.println(intToByte8(61));
+            System.out.println(intToByte8(38));
+            System.out.println(intToByte8(98));
+            System.out.println(intToByte8(117));
+            System.out.println(intToByte8(115));
+            System.out.println(intToByte8(105));
+            System.out.println(intToByte8(110));
+            System.out.println(intToByte8(101));
+            System.out.println(intToByte8(115));
+            System.out.println(intToByte8(115));
+            System.out.println(intToByte8(67));
+            System.out.println(intToByte8(108));
+            System.out.println(intToByte8(97));
+            System.out.println(intToByte8(115));
+            System.out.println(intToByte8(115));
+            System.out.println(intToByte8(61));
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
