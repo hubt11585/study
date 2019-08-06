@@ -20,50 +20,26 @@ public class Subject68 {
         System.out.println(tmp);
     }
 
+    /**
+     * 递归实现链表插入
+     * @param l1
+     * @param l2
+     * @return
+     */
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        if(l1 == null){
+        if (l1 == null) {
             return l2;
         }
-        if(l2 == null){
+        else if (l2 == null) {
             return l1;
         }
-        ListNode result = new ListNode(-1);
-        ListNode resulttmp = result;
-        ListNode tmp1 = l1;
-        while (tmp1 != null){
-            ListNode tmpVal = new ListNode(tmp1.val);
-            if(l2 == null){
-                resulttmp.next = tmpVal;
-                resulttmp = tmpVal;
-                tmp1 = tmp1.next;
-                continue;
-            }
-            while (l2 != null) {
-                if(tmpVal.val <= l2.val){
-                    resulttmp.next = tmpVal;
-                    resulttmp = tmpVal;
-                    if(tmp1 != null){
-                        tmp1 = tmp1.next;
-                        break;
-                    }else{
-                        ListNode tmp3 = new ListNode(l2.val);
-                        resulttmp.next = new ListNode(l2.val);
-                        resulttmp.next = tmp3;
-                        resulttmp = tmp3;
-                        l2 = l2.next;
-                    }
-                }else{
-                    ListNode tmp3 = new ListNode(l2.val);
-                    resulttmp.next = new ListNode(l2.val);
-                    resulttmp.next = tmp3;
-                    resulttmp = tmp3;
-                    l2 = l2.next;
-                }
-            }
+        else if (l1.val < l2.val) {
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
         }
-        if (l2 != null) {
-            resulttmp.next = l2;
+        else {
+            l2.next = mergeTwoLists(l1, l2.next);
+            return l2;
         }
-        return result.next;
     }
 }
