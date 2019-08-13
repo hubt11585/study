@@ -8,7 +8,8 @@ package demo.practice;
  */
 public class Subject72 {
 
-    public static ListNode head1 = null;
+    public ListNode head5 = new ListNode(0);
+    public ListNode head4 = head5;
 
     public static void main(String[] args) {
         ListNode listNode0 = new ListNode(1);
@@ -20,25 +21,42 @@ public class Subject72 {
         listNode1.next = listNode2;
         listNode2.next = listNode3;
         listNode3.next = listNode4;
-        ListNode listNode5 =  reverseGroup(listNode0);
+        ListNode listNode5 = new Subject72().reverseKGroup(listNode0,2);
         System.out.println(listNode5);
     }
 
-    public static ListNode reverseKGroup(ListNode head, int k) {
+    /**
+     * ÄæÐòKÁ´±í
+     * @param head
+     * @param k
+     * @return
+     */
+    public ListNode reverseKGroup(ListNode head, int k){
         ListNode head0 = head;
-        for (int i = 0; i < k; i++) {
+        ListNode head1 = head;
+        ListNode head2 = null;
+        for (int i = 0; i < k-1; i++) {
             if(head0 != null){
                 head0 = head0.next;
             }else{
-                head0 = head;
                 break;
             }
         }
-
-        head = head0;
-        reverseKGroup(head,k);
-
-        return null;
+        if(head0 != null){
+            head2 = head0.next;
+            head0.next = null;
+        }else{
+            head5.next = head;
+            return head4.next;
+        }
+        ListNode head3 = reverseGroup(head);
+        head5.next = head3;
+        head5 = head3;
+        while(head5.next != null){
+            head5 = head5.next;
+        }
+        reverseKGroup(head2,k);
+        return head4.next;
     }
 
     /**
