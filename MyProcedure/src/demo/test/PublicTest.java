@@ -7,7 +7,7 @@ public class PublicTest {
     Integer a;
     public static void main(String[] args) {
 
-        System.out.println(new PublicTest().a);
+        System.out.println("¢Ù²»ÄÜ×ª»»");
 
     }
 }
