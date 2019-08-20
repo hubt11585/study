@@ -6,23 +6,30 @@ package demo.practice;
  */
 public class Subject76 {
     public static void main(String[] args) {
-        int dividend = 2147483647;
-        int divisor = 3;
-        System.out.println(2147483647/3);
+        int dividend = -2147483648;
+        int divisor =  21;
         System.out.println(new Subject76().divide(dividend,divisor));
     }
 
     /**
-     * 实现除法，通过减法的方式
+     * 实现除法，通过竖式的方式
      * @param dividend
      * @param divisor
      * @return
      */
     public int divide(int dividend, int divisor) {
         //排除一些特殊结果
-        if(dividend == 0 || divisor == Integer.MIN_VALUE){
+        if(dividend == 0 ){
             return 0;
         }
+        if(divisor == Integer.MIN_VALUE){
+            if(dividend > Integer.MIN_VALUE){
+                return 0;
+            }else{
+                return 1;
+            }
+        }
+
         if(divisor == 1){
             return dividend;
         }
@@ -34,27 +41,50 @@ public class Subject76 {
             }
         }
         int result = 0;
-        //处理成原码进行运算
-        String s0 = Integer.toBinaryString(dividend);
-        String s1 = Integer.toBinaryString(divisor);
-        System.out.println(s0);
-        System.out.println(s1);
-        if(dividend > 0 && divisor > 0){
-            for (int i = 1; i < s1.length(); i++) {
-                if(s0.charAt(i) == '1'){
-                   result =result + dividend >>> i;
-                }
+        String s0 = String.valueOf(dividend);
+        String s1 = String.valueOf(divisor);
+        boolean flag = false;
+        if(s0.charAt(0) == '-'){
+            flag = true;
+        }else{
+            s0 = "-"+s0;
+        }
+
+        if(s1.charAt(0) == '-'){
+            if(flag){
+                flag = false;
+            }else{
+                flag = true;
+            }
+        }else{
+            s1 = "-"+s1;
+            divisor = -divisor;
+        }
+        int side = s1.length()-1;
+        if(side > s0.length()-1){
+            return 0;
+        }
+        int dividend0 = Integer.parseInt(s0.substring(0,side+1)); //临时除数
+        while(true){
+            side++;
+            int num = dividend0 - divisor;
+            int i = 0;
+            while(num <= 0){
+                i++;
+                num = num - divisor;
+            }
+            result = Integer.parseInt(result+"0") + i;
+            if(side >= s0.length()){
+                break;
+            }else{
+                dividend0 = Integer.parseInt((num-divisor)+ "" +s0.charAt(side));
             }
         }
-        if(dividend < 0 && divisor < 0){
 
+        if(flag){
+            return -result;
+        }else{
+            return result;
         }
-        if(dividend > 0 && divisor < 0) {
-
-        }
-        if(dividend < 0 && divisor > 0) {
-
-        }
-        return result;
     }
 }
