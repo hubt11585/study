@@ -7,7 +7,8 @@ package demo.practice;
 public class Subject76 {
     public static void main(String[] args) {
         int dividend = -2147483648;
-        int divisor =  21;
+        int divisor =  -1;
+        System.out.println(-2147483648/2);
         System.out.println(new Subject76().divide(dividend,divisor));
     }
 
@@ -19,7 +20,7 @@ public class Subject76 {
      */
     public int divide(int dividend, int divisor) {
         //排除一些特殊结果
-        if(dividend == 0 ){
+        if(dividend == 0){
             return 0;
         }
         if(divisor == Integer.MIN_VALUE){
@@ -77,7 +78,10 @@ public class Subject76 {
             if(side >= s0.length()){
                 break;
             }else{
-                dividend0 = Integer.parseInt((num-divisor)+ "" +s0.charAt(side));
+                dividend0 = Integer.parseInt((num+divisor)+ "" +s0.charAt(side));
+                if(dividend0 > 0){
+                    dividend0 = -dividend0;
+                }
             }
         }
 
