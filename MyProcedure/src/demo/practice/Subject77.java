@@ -1,6 +1,7 @@
 package demo.practice;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -9,149 +10,77 @@ import java.util.List;
  */
 public class Subject77 {
     public static void main(String[] args) {
-        String s = "abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab";
-        String[] words = new String[]{"ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba"};
+        String s = "ababaabababababababababababababababababababababababbababababab";
+        String[] words = new String[]{"ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba"};
         System.out.println(words.length);
         List<Integer> list = new Subject77().findSubstring(s,words);
         System.out.println(list);
     }
 
     public List<Integer> findSubstring(String s, String[] words) {
-        int lengths = words.length;
-        List<Integer> integerList = new ArrayList<>();
-        if(s.length() < words.length || "".equals(s)){
-            return integerList;
+        List<Integer> res = new ArrayList<Integer>();
+        int wordNum = words.length;
+        if (wordNum == 0) {
+            return res;
         }
-        for (int i = 0; i < lengths; i++) {
-            String tmp = words[i];
-            String tmpStr ;
-            int size = 0;
-            String tmpStr0 = s;
-
-            while(true){
-                int index = strStr(tmpStr0,tmp);
-                if(index == -1){
-                    break;
-                }else{
-                    index = size + index;
-                    String[] wordTmp = new String[lengths-1];
-                    for (int j = 0; j < wordTmp.length; j++) {
-                        if(j >= i){
-                            wordTmp[j] = words[j+1];
-                        }else{
-                            wordTmp[j] = words[j];
-                        }
-                    }
-                    if(wordTmp.length == 0){
-                        if(!integerList.contains(index)){
-                            integerList.add(index);
-                        }
-                        if(index + 1 < s.length()) {
-                            tmpStr0 = s.substring(index + 1, s.length());
-                            size = index + 1;
-                        }else{
-                            break;
-                        }
-                    }else{
-                        if(index + words[i].length() <= s.length()){
-                            tmpStr = s.substring(index + words[i].length(),s.length());
-                            if(findSubstring0(tmpStr,wordTmp)){
-                                if(!integerList.contains(index)){
-                                    integerList.add(index);
-                                }
+        int wordLen = words[0].length();
+        HashMap<String, Integer> allWords = new HashMap<String, Integer>();
+        for (String w : words) {
+            int value = allWords.getOrDefault(w, 0);
+            allWords.put(w, value + 1);
+        }
+        //½«ËùÓĞÒÆ¶¯·Ö³É wordLen ÀàÇé¿ö
+        for (int j = 0; j < wordLen; j++) {
+            HashMap<String, Integer> hasWords = new HashMap<String, Integer>();
+            int num = 0; //¼ÇÂ¼µ±Ç° HashMap2£¨ÕâÀïµÄ hasWords ±äÁ¿£©ÖĞÓĞ¶àÉÙ¸öµ¥´Ê
+            //Ã¿´ÎÒÆ¶¯Ò»¸öµ¥´Ê³¤¶È
+            for (int i = j; i < s.length() - wordNum * wordLen + 1; i = i + wordLen) {
+                boolean hasRemoved = false; //·ÀÖ¹Çé¿öÈıÒÆ³ıºó£¬Çé¿öÒ»¼ÌĞøÒÆ³ı
+                while (num < wordNum) {
+                    String word = s.substring(i + num * wordLen, i + (num + 1) * wordLen);
+                    if (allWords.containsKey(word)) {
+                        int value = hasWords.getOrDefault(word, 0);
+                        hasWords.put(word, value + 1);
+                        //³öÏÖÇé¿öÈı£¬Óöµ½ÁË·ûºÏµÄµ¥´Ê£¬µ«ÊÇ´ÎÊı³¬ÁË
+                        if (hasWords.get(word) > allWords.get(word)) {
+                            // hasWords.put(word, value);
+                            hasRemoved = true;
+                            int removeNum = 0;
+                            //Ò»Ö±ÒÆ³ıµ¥´Ê£¬Ö±µ½´ÎÊı·ûºÏÁË
+                            while (hasWords.get(word) > allWords.get(word)) {
+                                String firstWord = s.substring(i + removeNum * wordLen, i + (removeNum + 1) * wordLen);
+                                int v = hasWords.get(firstWord);
+                                hasWords.put(firstWord, v - 1);
+                                removeNum++;
                             }
-                            tmpStr0 = s.substring(index+1,s.length());
-                            size = index+1;
-                        }else{
+                            num = num - removeNum + 1; //¼Ó 1 ÊÇÒòÎªÎÒÃÇ°Ñµ±Ç°µ¥´Ê¼ÓÈëµ½ÁË HashMap 2 ÖĞ
+                            i = i + (removeNum - 1) * wordLen; //ÕâÀïÒÀ¾ÉÊÇ¿¼ÂÇµ½ÁË×îÍâ²ãµÄ for Ñ­»·£¬¿´Çé¿ö¶şµÄ½âÊÍ
                             break;
                         }
+                        //³öÏÖÇé¿ö¶ş£¬Óöµ½ÁË²»Æ¥ÅäµÄµ¥´Ê£¬Ö±½Ó½« i ÒÆ¶¯µ½¸Ãµ¥´ÊµÄºó±ß£¨µ«ÆäÊµÕâÀï
+                        //Ö»ÊÇÒÆ¶¯µ½ÁË³öÏÖÎÊÌâµ¥´ÊµÄµØ·½£¬ÒòÎª×îÍâ²ãÓĞ for Ñ­»·£¬ i »¹»áÒÆ¶¯Ò»¸öµ¥´Ê
+                        //È»ºó¸ÕºÃ¾ÍÒÆ¶¯µ½ÁËµ¥´Êºó±ß£©
+                    } else {
+                        hasWords.clear();
+                        i = i + num * wordLen;
+                        num = 0;
+                        break;
                     }
+                    num++;
                 }
-            }
-        }
-        return integerList;
-    }
+                if (num == wordNum) {
+                    res.add(i);
 
-    /**
-     * Ê£ÓàÊı¾İÆ¥Åä
-     * @param s
-     * @param words
-     * @return
-     */
-    public boolean findSubstring0(String s, String[] words) {
-        String tmpStr = s;
-        for (int i = 0; i < words.length; i++) {
-            if(words[i].length() <= s.length() && words[i].equals(s.substring(0,words[i].length()))){
-                String[] wordTmp = new String[words.length-1];
-                for (int j = 0; j < wordTmp.length; j++) {
-                    if(j >= i){
-                        wordTmp[j] = words[j+1];
-                    }else{
-                        wordTmp[j] = words[j];
-                    }
                 }
-                tmpStr = tmpStr.substring(words[i].length(),tmpStr.length());
-                if(wordTmp.length > 0){
-                    return findSubstring0(tmpStr,wordTmp);
-                }else{
-                    return true;
+                //³öÏÖÇé¿öÒ»£¬×Ó´®ÍêÈ«Æ¥Åä£¬ÎÒÃÇ½«ÉÏÒ»¸ö×Ó´®µÄµÚÒ»¸öµ¥´Ê´Ó HashMap2 ÖĞÒÆ³ı
+                if (num > 0 && !hasRemoved) {
+                    String firstWord = s.substring(i, i + wordLen);
+                    int v = hasWords.get(firstWord);
+                    hasWords.put(firstWord, v - 1);
+                    num = num - 1;
                 }
             }
         }
-        return false;
-    }
-
-    /**
-     * ÊµÏÖstrStr()º¯Êı
-     */
-    public int strStr(String haystack, String needle) {
-        if("".equals(needle) || needle == null){
-            return 0;
-        }else{
-            if("".equals(haystack) || haystack == null ){
-                return -1;
-            }
-        }
-        char[] arr0= haystack.toCharArray();
-        char[] arr1= needle.toCharArray();
-        return strStr0(arr0,arr1,0,arr0.length,-1);
-    }
-
-    /**
-     * µİ¹é´¦Àí
-     * @param arr0
-     * @param arr1
-     * @param side
-     * @param lengths0
-     * @param result
-     * @return
-     */
-    public int strStr0(char[] arr0, char[] arr1,int side,int lengths0,int result) {
-        if(result == 0){
-            return side-1;
-        }
-        boolean flag = false;
-        for (int i = side; i < lengths0; i++) {
-            if(arr0[i] == arr1[0]){
-                side = i;
-                flag = true;
-                break;
-            }
-        }
-        int tmp = lengths0 - side;
-        int lengths1 = arr1.length;
-        if(tmp < lengths1 || !flag){
-            return -1;
-        }else{
-            int identification = 0;
-            for (int i = 1, j = side+1; i < lengths1; i++,j++) {
-                if(arr0[j] != arr1[i]){
-                    identification = -1;
-                    break;
-                }
-            }
-            side = side+1;
-            return strStr0(arr0,arr1,side, lengths0,identification);
-        }
+        return res;
     }
 }
