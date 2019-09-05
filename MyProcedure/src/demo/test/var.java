@@ -1,14 +1,17 @@
 package demo.test;
 
+import demo.design.strategy.imp.Person;
+
+import java.util.Iterator;
+import java.util.TreeSet;
 
 public class var {
-
-    public static void main(String[] args){
-        int m = 500;
-        Integer obj = m;
-        int n = obj;
-        System.out.println("n =  " + n);
-        Integer obj1 = 500;
-        System.out.println("iobj 等价于 obj2 ?" + obj.equals(obj1));
+    public static void main(String[] agrs){
+        TreeSet<Person> ts = new TreeSet<>();
+        ts.add(new Person("张三", 23));
+        ts.add(new Person("李四", 13));
+        ts.add(new Person("周七", 13));
+        ts.add(new Person("王五", 43));
+        ts.add(new Person("赵六", 33));
     }
 }
