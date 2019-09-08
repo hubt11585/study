@@ -1,17 +1,16 @@
 package demo.test;
 
-import demo.design.strategy.imp.Person;
-
-import java.util.Iterator;
-import java.util.TreeSet;
+import java.util.TreeMap;
 
 public class var {
     public static void main(String[] agrs){
-        TreeSet<Person> ts = new TreeSet<>();
-        ts.add(new Person("张三", 23));
-        ts.add(new Person("李四", 13));
-        ts.add(new Person("周七", 13));
-        ts.add(new Person("王五", 43));
-        ts.add(new Person("赵六", 33));
+        TreeMap<Person, String> hm = new TreeMap<Person, String>(
+                new MyComparator());
+        hm.put(new Person("jack", 20), "1001");
+        hm.put(new Person("rose", 18), "1002");
+        hm.put(new Person("lucy", 19), "1003");
+        hm.put(new Person("hmm", 17), "1004");
+        hm.put(new Person("ll", 25), "1005");
+        System.out.println(hm);
     }
 }
