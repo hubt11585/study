@@ -1,24 +1,23 @@
 package demo.test;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class PublicTest {
-    public static void main(String[] args) {
-        int i = 3;
-        switch (i) {
-            case 1:
-                System.out.println("正常");
-                break;
-            case 2:
-                System.out.println("正常");
-                break;
-            case 5:
-                System.out.println("正常");
-                break;
-            default:
-                assert false:"i的值无效";       //如果i的值不是你想要的，程序就警告退出
+    static <T extends String> T[] toArray(T... args) {
+        return args;
+    }
+
+    static <T extends String> T[] pickTwo(T a, T b, T c) {
+        switch(ThreadLocalRandom.current().nextInt(3)) {
+            case 0: return toArray(a, b);
+            case 1: return toArray(a, c);
+            case 2: return toArray(b, c);
         }
-        System.out.println("如果断言正常，我就被打印");
+        throw new AssertionError(); // Can't get here
+    }
+
+    public static void main(String[] args) {
+        String[] attributes = pickTwo("Good", "Fast", "Cheap");
+        System.out.println(attributes[0]+" : "+attributes[1]);
     }
 }
