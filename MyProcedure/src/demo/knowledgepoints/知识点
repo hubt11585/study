@@ -2,7 +2,7 @@
 2. 反序列化。
 3. 代理类（section）：通过代理接口InvocationHandler和Proxy，实现AOP效果。
 4. JDK1.8: stream的用法
-5. JDK1.8: Lambda 表达式
+5. JDK1.8: Lambda 表达式   https://www.cnblogs.com/coprince/p/8692972.html
 6. 反射
 7. 锁：乐观锁和悲观锁。
 8. ArrayDeque双端队列
@@ -34,6 +34,7 @@
 https://wenku.baidu.com/view/d07ae21aa76e58fafab00383.html
 
 29 栈（Stack）
+30 对接邮箱。
 
 spring boot 打包和执行包
 https://blog.csdn.net/qq_36159851/article/details/79699193
