@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class Subject32 {
 
-    private static int num_1 = 24;
+    private static int num_1 = 10;
     private static List<int[]> list = new ArrayList<>();
 
     public static void main(String[] args) {

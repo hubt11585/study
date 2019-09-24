@@ -1,8 +1,5 @@
 package demo.practice;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * 编写一个程序，通过已填充的空格来解决数独问题。
  * 一个数独的解法需遵循如下规则：
@@ -13,17 +10,16 @@ import java.util.Set;
  */
 public class Subject84 {
     public static void main(String[] args) {
-//        board = new char[][]{
-//                {'5','3','.','.','7','.','.','.','.'},
-//                {'6','.','.','1','9','5','.','.','.'},
-//                {'.','9','8','.','.','.','.','6','.'},
-//                {'8','.','.','.','6','.','.','.','3'},
-//                {'4','.','.','8','.','3','.','.','1'},
-//                {'7','.','.','.','2','.','.','.','6'},
-//                {'.','6','.','.','.','.','2','8','.'},
-//                {'.','.','.','4','1','9','.','.','5'},
-//                {'.','.','.','.','8','.','.','7','9'}};
-        char[][] board = new char[][]{{'.','.','9','7','4','8','.','.','.'},{'7','.','.','.','.','.','.','.','.'},{'.','2','.','1','.','9','.','.','.'},{'.','.','7','.','.','.','2','4','.'},{'.','6','4','.','1','.','5','9','.'},{'.','9','8','.','.','.','3','.','.'},{'.','.','.','8','.','3','.','2','.'},{'.','.','.','.','.','.','.','.','6'},{'.','.','.','2','7','5','9','.','.'}};
+        char[][] board = new char[][]{
+                {'.','.','9','7','4','8','.','.','.'},
+                {'7','.','.','.','.','.','.','.','.'},
+                {'.','2','.','1','.','9','.','.','.'},
+                {'.','.','7','.','.','.','2','4','.'},
+                {'.','6','4','.','1','.','5','9','.'},
+                {'.','9','8','.','.','.','3','.','.'},
+                {'.','.','.','8','.','3','.','2','.'},
+                {'.','.','.','.','.','.','.','.','6'},
+                {'.','.','.','2','7','5','9','.','.'}};
         new Subject84().solveSudoku(board);
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
@@ -48,7 +44,7 @@ public class Subject84 {
 
     public boolean couldPlace(int d, int row, int col) {
     /*
-    Check if one could place a number d in (row, col) cell
+    检查是否可以在（行，列）单元格中放置数字d
     */
         int idx = (row / n ) * n + col / n;
         return rows[row][d] + columns[col][d] + boxes[idx][d] == 0;
@@ -56,7 +52,7 @@ public class Subject84 {
 
     public void placeNumber(int d, int row, int col) {
     /*
-    Place a number d in (row, col) cell
+    在（行，列）单元格中放置数字d
     */
         int idx = (row / n ) * n + col / n;
 
@@ -64,11 +60,17 @@ public class Subject84 {
         columns[col][d]++;
         boxes[idx][d]++;
         board[row][col] = (char)(d + '0');
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                System.out.print(board[i][j]+" ");
+            }
+            System.out.println();
+        }
     }
 
     public void removeNumber(int d, int row, int col) {
     /*
-    Remove a number which didn't lead to a solution
+    删除一个无法找到解决方案的数字
     */
         int idx = (row / n ) * n + col / n;
         rows[row][d]--;
@@ -79,19 +81,19 @@ public class Subject84 {
 
     public void placeNextNumbers(int row, int col) {
     /*
-    Call backtrack function in recursion
-    to continue to place numbers
-    till the moment we have a solution
+    递归调用回溯函数
+    继续放置数字
+    直到我们找到解决办法
     */
-        // if we're in the last cell
-        // that means we have the solution
+        // 如果我们在最后一个牢房里
+        // 这意味着我们有办法
         if ((col == N - 1) && (row == N - 1)) {
             sudokuSolved = true;
         }
-        // if not yet
+        // 如果还没有
         else {
-            // if we're in the end of the row
-            // go to the next row
+            // 如果我们排在最后
+            // 到下一排
             if (col == N - 1) backtrack(row + 1, 0);
                 // go to the next column
             else backtrack(row, col + 1);
@@ -100,17 +102,17 @@ public class Subject84 {
 
     public void backtrack(int row, int col) {
     /*
-    Backtracking
+    回溯
     */
-        // if the cell is empty
+        // 如果单元格是空的
         if (board[row][col] == '.') {
-            // iterate over all numbers from 1 to 9
+            // 对从1到9的所有数字进行迭代
             for (int d = 1; d < 10; d++) {
                 if (couldPlace(d, row, col)) {
                     placeNumber(d, row, col);
                     placeNextNumbers(row, col);
-                    // if sudoku is solved, there is no need to backtrack
-                    // since the single unique solution is promised
+                    // 如果数独问题解决了，就不必回头了。
+                    // 因为独联解决方案是有希望的
                     if (!sudokuSolved) removeNumber(d, row, col);
                 }
             }
@@ -121,7 +123,7 @@ public class Subject84 {
     public void solveSudoku(char[][] board) {
         this.board = board;
 
-        // init rows, columns and boxes
+        // 初始化行、列和框
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 char num = board[i][j];

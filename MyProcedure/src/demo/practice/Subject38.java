@@ -41,6 +41,4 @@ public class Subject38 {
         }
         System.out.println();
     }
-
-
 }
