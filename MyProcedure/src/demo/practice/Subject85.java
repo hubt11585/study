@@ -15,10 +15,29 @@ package demo.practice;
 public class Subject85 {
 
     public static void main(String[] args) {
-        System.out.println(new Subject85().countAndSay(4));
+        System.out.println(new Subject85().countAndSay(6));
     }
 
     public String countAndSay(int n) {
-        return "";
+        if(n == 1){
+            return "1";
+        }else{
+            String str = countAndSay(n-1);
+            char[] chArr = str.toCharArray();
+            StringBuilder strTmp = new StringBuilder("");
+            char ch = chArr[0] ;
+            int count = 0;
+            for (int i = 0; i < chArr.length; i++) {
+                if(ch == chArr[i]){
+                    count++;
+                }else{
+                    strTmp.append(count).append(ch);
+                    ch = chArr[i];
+                    count = 1;
+                }
+            }
+            strTmp.append(count).append(ch);
+            return strTmp.toString();
+        }
     }
 }
