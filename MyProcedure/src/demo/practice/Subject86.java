@@ -1,6 +1,7 @@
 package demo.practice;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -16,8 +17,8 @@ public class Subject86 {
     List<List<Integer>> resultList = null;
 
     public static void main(String[] args) {
-        int[] candidates = new int[]{1};
-        List<List<Integer>> list = new Subject86().combinationSum(candidates,1);
+        int[] candidates = new int[]{2,3,6,7};
+        List<List<Integer>> list = new Subject86().combinationSum(candidates,7);
         System.out.println(list);
     }
 
@@ -28,16 +29,23 @@ public class Subject86 {
             return null;
         }
         // 排除大于target 的数。
-
+        Arrays.sort(candidates);
+        List<List<Integer>> listTmp = new ArrayList<>();
         List<Integer> newList = new ArrayList();
         for (int i = 0; i < arrLength; i++) {
-            if(candidates[i] <= target){
+            List<Integer> list = new ArrayList<>();
+            list.add(candidates[i]);
+            if(candidates[i] < target){
                 newList.add(candidates[i]);
+                listTmp.add(list);
+            }else if(candidates[i] == target){
+                resultList.add(list);
+                break;
+            }else{
+                break;
             }
         }
-        Collections.sort(newList);
 
-        List<List<Integer>> listTmp = new ArrayList<>();
         this.getResultList(newList,target,listTmp);
         return resultList;
     }
@@ -60,7 +68,8 @@ public class Subject86 {
             tmp0Sum = sumList(listTmp0.get(0));
         }
         for (int i = 0; i < newList.size(); i++) {
-            if(target - tmp0Sum - newList.get(i) < 0){
+            int newInt = newList.get(i);
+            if(target - tmp0Sum - newInt < 0){
                 newList.remove(i);
                 i--;
                 continue;
@@ -68,34 +77,22 @@ public class Subject86 {
             if(listTmp0.size() > 0) {
                 for (int j = 0; j < listTmp0.size(); j++) {
                     int tmpSum = sumList(listTmp0.get(j));
-                    int dValue = target - tmpSum - newList.get(i);
+                    int dValue = target - tmpSum - newInt;
                     if (dValue > 0) {
                         List<Integer> list = new ArrayList<>();
                         list.addAll(listTmp0.get(j));
-                        list.add(newList.get(i));
+                        list.add(newInt);
                         listTmp.add(list);
                     } else if (dValue == 0) {
                         List<Integer> list = new ArrayList<>();
                         list.addAll(listTmp0.get(j));
-                        list.add(newList.get(i));
+                        list.add(newInt);
                         Collections.sort(list);
                         if(!resultList.contains(list)){
                             resultList.add(list);
                         }
                         listTmp.add(list);
                     }
-                }
-            }else{
-                int dValue = target - newList.get(i);
-                if(dValue > 0){
-                    List<Integer> list = new ArrayList<>();
-                    list.add( newList.get(i));
-                    listTmp.add(list);
-                }else if(dValue == 0){
-                    List<Integer> list = new ArrayList<>();
-                    list.add( newList.get(i));
-                    resultList.add(list);
-                    listTmp.add(list);
                 }
             }
         }
