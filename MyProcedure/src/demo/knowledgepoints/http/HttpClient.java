@@ -11,15 +11,18 @@ import java.util.Map;
 
 public class HttpClient {
 
+    static String PostURL = "http://192.168.163.218:9091/getData.json";
+    static String getURL = "https://www.baidu.com";
+
     public static void main(String[] args) {
         Map<String, String> params = new HashMap<String, String>();
-        params.put("fileType","123");
-        String dd = HttpClient.post("http://192.168.163.218:9091/common/fffff.json",params);
+        params.put("name","李磊");
+        params.put("age","18");
+        String dd = HttpClient.post(PostURL,params);
         System.out.println(dd);
-        //HttpClient.doPost("http://192.168.223.64:12008/moneyOrderView","{fileType:2}");
-        /*Map<String, String> params = new HashMap<String, String>();
-        params.put("uuid","123");
-        HttpClient.post("http://192.168.223.64:12008/moneyOrderView",params);*/
+
+        String str = HttpClient.get(getURL);
+        System.out.println(str);
     }
 
     // ;charset=utf-8 必须要，不然会出现乱码
@@ -54,7 +57,7 @@ public class HttpClient {
      * @Return: String，响应数据。
      * @Author: PeiFeng
      * @Version: V1.00
-     * @Create Date: 2017-8-8
+     * @Create Date: 2019-8-8
      */
     public static String post(String URL, Map<String, String> params) {
         StringBuilder parm = new StringBuilder();
@@ -63,7 +66,8 @@ public class HttpClient {
                 parm.append(entry.getKey()).append("=").append(entry.getValue()).append("&");
             }
         }
-        return post(URL, parm.toString());
+        System.out.println(parm.toString());
+        return post(URL, "{\"name\":\"李磊\",\"age\":\"18\"}");
     }
 
     /**
@@ -74,7 +78,7 @@ public class HttpClient {
      * @Return: String，响应数据。
      * @Author: PeiFeng
      * @Version: V1.00
-     * @Create Date: 2017-8-8
+     * @Create Date: 2019-8-8
      */
     public static String post(String URL, String parm) {
 
@@ -223,5 +227,4 @@ public class HttpClient {
         }
         return null;
     }
-
 }
