@@ -5,7 +5,7 @@
 5. JDK1.8: Lambda 表达式   https://www.cnblogs.com/coprince/p/8692972.html
 6. 反射
 7. 锁：乐观锁和悲观锁。
-8. ArrayDeque双端队列
+8. ArrayDeque双端队列。
 8. 区块链。
 6. Lombok : 通过注解，自动实现setter/getter、equals、canEqual、hashCode、toString方法。
 7. JUnit4: 单元测试
@@ -32,9 +32,10 @@
 27 QuickSort :快速排序（https://www.cnblogs.com/jiansen/p/7343867.html）。
 28 原码，反码，补码的加减乘除运算
 https://wenku.baidu.com/view/d07ae21aa76e58fafab00383.html
-
 29 栈（Stack）
 30 对接邮箱。
+31 Http请求。
+32 Spring RestTemplate
 
 spring boot 打包和执行包
 https://blog.csdn.net/qq_36159851/article/details/79699193
