@@ -1,6 +1,6 @@
 package demo.knowledgepoints.http;
 
-import org.apache.http.HttpEntity;
+/*import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.HttpGet;
@@ -13,9 +13,9 @@ import org.json.JSONObject;
 
 import java.nio.charset.Charset;
 
-/**
+*//**
  * «Î«Û¿‡
- */
+ *//*
 public class PostInterface {
 
     public static JSONObject postJson(String url, JSONObject json) {
@@ -60,4 +60,4 @@ public class PostInterface {
         }
         return result;
     }
-}
+}*/

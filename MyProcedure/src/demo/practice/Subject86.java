@@ -1,9 +1,6 @@
 package demo.practice;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * 给定一个无重复元素的数组candidates和一个目标数target，找出candidates中所有可以使数字和为target的组合。
@@ -14,7 +11,9 @@ import java.util.List;
  */
 public class Subject86 {
 
-    List<List<Integer>> resultList = null;
+    private List<List<Integer>> res = new ArrayList<>();
+    private int[] candidates;
+    private int len;
 
     public static void main(String[] args) {
         int[] candidates = new int[]{2,3,6,7};
@@ -22,88 +21,33 @@ public class Subject86 {
         System.out.println(list);
     }
 
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        resultList = new ArrayList<>();
-        int arrLength = candidates.length;
-        if(arrLength < 0){
-            return null;
-        }
-        // 排除大于target 的数。
-        Arrays.sort(candidates);
-        List<List<Integer>> listTmp = new ArrayList<>();
-        List<Integer> newList = new ArrayList();
-        for (int i = 0; i < arrLength; i++) {
-            List<Integer> list = new ArrayList<>();
-            list.add(candidates[i]);
-            if(candidates[i] < target){
-                newList.add(candidates[i]);
-                listTmp.add(list);
-            }else if(candidates[i] == target){
-                resultList.add(list);
-                break;
-            }else{
-                break;
-            }
-        }
-
-        this.getResultList(newList,target,listTmp);
-        return resultList;
-    }
-
-    /**
-     * target 减去整个数组，后结果大于0的保存下来，并且将小于0的数据都删除，知道newList数据为空。
-     * @param newList
-     * @param target
-     * @param listTmp
-     */
-    public void getResultList(List<Integer> newList,int target,List<List<Integer>> listTmp) {
-        if(newList.size() <= 0){
+    private void findCombinationSum(int residue, int start, Stack<Integer> pre) {
+        if (residue == 0) {
+            // Java 中可变对象是引用传递，因此需要将当前 path 里的值拷贝出来
+            res.add(new ArrayList<>(pre));
             return;
         }
-        List<List<Integer>> listTmp0 =  new ArrayList<>();
-        listTmp0.addAll(listTmp);
-        listTmp.clear();
-        int tmp0Sum = 0;
-        if(listTmp0.size() > 0){
-            tmp0Sum = sumList(listTmp0.get(0));
+        // 优化添加的代码2：在循环的时候做判断，尽量避免系统栈的深度
+        // residue - candidates[i] 表示下一轮的剩余，如果下一轮的剩余都小于 0 ，就没有必要进行后面的循环了
+        // 这一点基于原始数组是排序数组的前提，因为如果计算后面的剩余，只会越来越小
+        for (int i = start; i < len && residue - candidates[i] >= 0; i++) {
+            pre.add(candidates[i]);
+            // 【关键】因为元素可以重复使用，这里递归传递下去的是 i 而不是 i + 1
+            findCombinationSum(residue - candidates[i], i, pre);
+            pre.pop();
         }
-        for (int i = 0; i < newList.size(); i++) {
-            int newInt = newList.get(i);
-            if(target - tmp0Sum - newInt < 0){
-                newList.remove(i);
-                i--;
-                continue;
-            }
-            if(listTmp0.size() > 0) {
-                for (int j = 0; j < listTmp0.size(); j++) {
-                    int tmpSum = sumList(listTmp0.get(j));
-                    int dValue = target - tmpSum - newInt;
-                    if (dValue > 0) {
-                        List<Integer> list = new ArrayList<>();
-                        list.addAll(listTmp0.get(j));
-                        list.add(newInt);
-                        listTmp.add(list);
-                    } else if (dValue == 0) {
-                        List<Integer> list = new ArrayList<>();
-                        list.addAll(listTmp0.get(j));
-                        list.add(newInt);
-                        Collections.sort(list);
-                        if(!resultList.contains(list)){
-                            resultList.add(list);
-                        }
-                        listTmp.add(list);
-                    }
-                }
-            }
-        }
-        getResultList(newList,target,listTmp);
     }
 
-    public int sumList(List<Integer> integerList) {
-        int sum = 0;
-        for (int i = 0; i < integerList.size(); i++) {
-            sum += integerList.get(i);
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        int len = candidates.length;
+        if (len == 0) {
+            return res;
         }
-        return sum;
+        // 优化添加的代码1：先对数组排序，可以提前终止判断
+        Arrays.sort(candidates);
+        this.len = len;
+        this.candidates = candidates;
+        findCombinationSum(target, 0, new Stack<>());
+        return res;
     }
 }
