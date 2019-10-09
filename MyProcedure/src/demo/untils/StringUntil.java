@@ -3,7 +3,7 @@ package demo.untils;
 public class StringUntil {
 
     /**
-     * ÅÐ¶Ï×Ö·û´®ÊÇ·ñÎª¿Õ
+     * ?Ð¶????????????
      * @param str
      * @return
      */
@@ -23,7 +23,7 @@ public class StringUntil {
     }
 
     /**
-     * ÅÐ¶Ï×Ö·û´®ÊÇ·ñ²»Îª¿Õ
+     * ?Ð¶????????????
      * @param str
      * @return
      */

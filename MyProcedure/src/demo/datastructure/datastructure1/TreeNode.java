@@ -1,5 +1,4 @@
-package demo.knowledgepoints.TreeStructure;
-
+package demo.datastructure.datastructure1;
 
 import java.util.ArrayList;
 import java.util.List;

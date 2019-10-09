@@ -1,5 +1,4 @@
-package demo.knowledgepoints.TreeStructure;
-
+package demo.datastructure.datastructure1;
 
 /**
  * 创建一个树结构：

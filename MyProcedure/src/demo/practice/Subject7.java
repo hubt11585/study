@@ -3,12 +3,12 @@ package demo.practice;
 import java.util.Scanner;
 
 /**
- * 【程序7】
- * 题目：输入一行字符，分别统计出其英文字母、空格、数字和其它字符的个数。
+ * ??????7??
+ * ????????????????????????????????????????????????????????
  */
 public class Subject7 {
     public static void main(String[] args) {
-        System.out.println("请输入字符串：" );
+        System.out.println("?????????????" );
         Scanner scanner=new Scanner(System.in);
         scanner.useDelimiter("\n");
         String tmpStr = scanner.next();
@@ -17,13 +17,13 @@ public class Subject7 {
 
     public static void classify(String str){
         char[] strArr = str.toCharArray();
-        int num1 = 0;  //字母
+        int num1 = 0;  //???
         String num1Str = "";
-        int num2 = 0;  //数字
+        int num2 = 0;  //????
         String num2Str = "";
-        int space = 0; //空格
+        int space = 0; //???
         String spaceStr = "";
-        int other = 0; //其他
+        int other = 0; //????
         String otherStr = "";
         for (int i = 0; i < strArr.length ; i++) {
             int ascii = (int)strArr[i];
@@ -40,16 +40,16 @@ public class Subject7 {
                 otherStr = otherStr +strArr[i] +" ";
             }
         }
-        System.out.println("存在字母个数:" + num1);
-        System.out.println("存在字母如下:" + num1Str);
+        System.out.println("???????????:" + num1);
+        System.out.println("???????????:" + num1Str);
 
-        System.out.println("存在数字个数:" + num2);
-        System.out.println("存在数字如下:" + num2Str);
+        System.out.println("???????????:" + num2);
+        System.out.println("????????????:" + num2Str);
 
-        System.out.println("存在空格个数:" + space);
+        System.out.println("?????????:" + space);
 
-        System.out.println("存在其他个数:" + other);
-        System.out.println("存在其他如下:" + otherStr);
+        System.out.println("????????????:" + other);
+        System.out.println("????????????:" + otherStr);
 
     }
 }
