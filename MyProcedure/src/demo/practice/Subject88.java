@@ -5,63 +5,60 @@ package demo.practice;
  */
 public class Subject88 {
     public static void main(String[] args) {
-        int[] arrInt = new int[]{1,2,3};
+        int[] arrInt = new int[]{-1,-9,1,2,4,6,9,8};
         int number = new Subject88().firstMissingPositive(arrInt);
         System.out.println(number);
     }
 
     public int firstMissingPositive(int[] nums) {
-        int lengths = nums.length;
-        if(lengths <= 0){
-            return 1;
-        }
-        QuickSort(nums,0,lengths-1);
-        if(nums[0] > 1){
-            return 1;
-        }
-        for (int i = 1; i < lengths; i++) {
-            if(nums[i] > 1){
-                if(nums[i] - nums[i-1] > 1){
-                    if(nums[i-1] > 0){
-                        return nums[i-1]+1;
-                    }else{
-                        return 1;
-                    }
-                }
-            }
-        }
-        if(nums[nums.length-1] > 0){
-            return nums[nums.length-1]+1;
-        }else{
-            return 1;
-        }
-    }
+        int n = nums.length;
 
-    public int PartSort(int arr[], int low, int high) {
-        int data = arr[low];
-        /**一次遍历的方法：插空法 定义一个data将arr[low]存起来，并把这个位置挖空*/
-        while (low < high) {
-            while (low < high && arr[high] >= data) {
-                high--;
+        // 基本情况
+        int contains = 0;
+        for (int i = 0; i < n; i++) {
+            if (nums[i] == 1) {
+                contains++;
+                break;
             }
-            arr[low] = arr[high];
-            /**从high，也就是后面往前遍历 找到比键值小的数据 插入到前面留下的空中 high位再次留下空来*/
-            while (low < high && arr[low] <= data) {
-                low++;
-            }
-            arr[high] = arr[low];
         }
-        arr[low] = data;
-        /**循环退出后 low和high重合 将将键值赋给第low，并将low返回*/
-        return low;
-    }
+        if (contains == 0)
+            return 1;
 
-    public void QuickSort(int arr[], int low, int high) {
-        if(low<high) {
-            //防止发生栈溢出异常
-            int index = PartSort(arr, low, high);
-            QuickSort(arr, low, index - 1);
-            QuickSort(arr, index + 1, high);
+        // nums = [1]
+        if (n == 1)
+            return 2;
+
+        // 用 1 替换负数，0，
+        // 和大于 n 的数
+        // 在转换以后，nums 只会包含
+        // 正数
+        for (int i = 0; i < n; i++)
+            if ((nums[i] <= 0) || (nums[i] > n))
+                nums[i] = 1;
+
+        // 使用索引和数字符号作为检查器
+        // 例如，如果 nums[1] 是负数表示在数组中出现了数字 `1`
+        // 如果 nums[2] 是正数 表示数字 2 没有出现
+        for (int i = 0; i < n; i++) {
+            int a = Math.abs(nums[i]);
+            // 如果发现了一个数字 a - 改变第 a 个元素的符号
+            // 注意重复元素只需操作一次
+            if (a == n)
+                nums[0] = - Math.abs(nums[0]);
+            else
+                nums[a] = - Math.abs(nums[a]);
         }
+
+        // 现在第一个正数的下标
+        // 就是第一个缺失的数
+        for (int i = 1; i < n; i++) {
+            if (nums[i] > 0)
+                return i;
+        }
+
+        if (nums[0] > 0)
+            return n;
+
+        return n + 1;
     }
 }
