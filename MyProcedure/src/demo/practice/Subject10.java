@@ -17,12 +17,16 @@ public class Subject10 {
 
     public static void sumLength(int n){
         double height = 100;
-        double sumLength = 100;
+        double sumLength = 0;
         for(int i=1; i<=n; i++){
-            sumLength = sumLength + height;
+            if(i==1){
+                sumLength = sumLength + height;
+            }else{
+                sumLength = sumLength + height*2;
+            }
             height = height/2;
         }
         System.out.println("总运动距离为："+sumLength);
-        System.out.println("总运动距离为："+height);
+        System.out.println("反弹高度为："+height);
     }
 }

@@ -3,7 +3,7 @@
 3. 代理类（section）：通过代理接口InvocationHandler和Proxy，实现AOP效果。
 4. JDK1.8: stream的用法
 5. JDK1.8: Lambda 表达式   https://www.cnblogs.com/coprince/p/8692972.html
-6. 反射
+6. 反射  https://www.jianshu.com/p/9dad553ecd05
 7. 锁：乐观锁和悲观锁。
 8. ArrayDeque双端队列。
 8. 区块链。

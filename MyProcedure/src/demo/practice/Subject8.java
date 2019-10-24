@@ -25,10 +25,10 @@ public class Subject8 {
     public static void sum(int num1,int num2) {
         String numStr = "";
         String result = "";
-        BigDecimal bigDecimal = new BigDecimal("8");
-        for(int i=1;i< num1; i++ ){
+        BigDecimal bigDecimal = new BigDecimal("0");
+        for(int i=0;i< num1; i++ ){
             numStr = numStr+num2;
-            if(i==1){
+            if(i==0){
                 result = result+numStr;
             }else{
                 result = result+"+"+numStr;
