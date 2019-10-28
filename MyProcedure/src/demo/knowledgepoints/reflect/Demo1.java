@@ -7,9 +7,7 @@ public class Demo1 {
     private static final boolean flag = true ;
 
     //将其私有化，保证不能通过New的方式创建。
-    private Demo1(){
-
-    }
+    private Demo1(){}
 
     //创建get方法，用于告知使用者，不能被new，不能被获取。
     public static Demo1 getDemo1() throws Exception{

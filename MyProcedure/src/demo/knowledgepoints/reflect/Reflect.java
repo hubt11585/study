@@ -1,6 +1,8 @@
 package demo.knowledgepoints.reflect;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 public class Reflect {
     public static void main(String[] args) {
@@ -45,6 +47,71 @@ public class Reflect {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
+        }
+
+
+        reflectNewInstance();
+        reflectPrivateConstructor();
+        reflectPrivateField();
+        reflectPrivateMethod();
+    }
+
+    /**
+     * 通过反射获取对象
+     */
+    public static void reflectNewInstance() {
+        try {
+            Class<?> classBook = Class.forName("demo.knowledgepoints.reflect.Book");
+            Object objectBook = classBook.newInstance();
+            Book book = (Book) objectBook;
+            book.setName("Java进阶之光");
+            book.setAuthor("蕾蕾");
+            System.out.println("reflectNewInstance book = " + book.toString());
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    // 反射私有的构造方法
+    public static void reflectPrivateConstructor() {
+        try {
+            Class<?> classBook = Class.forName("demo.knowledgepoints.reflect.Book");
+            Constructor<?> declaredConstructorBook = classBook.getDeclaredConstructor(String.class,String.class);
+            declaredConstructorBook.setAccessible(true);
+            Object objectBook = declaredConstructorBook.newInstance("Java开发艺术探索","磊磊");
+            Book book = (Book) objectBook;
+            System.out.println("reflectPrivateConstructor book = " + book.toString());
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    // 反射私有属性
+    public static void reflectPrivateField() {
+        try {
+            Class<?> classBook = Class.forName("demo.knowledgepoints.reflect.Book");
+            Object objectBook = classBook.newInstance();
+            Field fieldTag = classBook.getDeclaredField("TAG");
+            fieldTag.setAccessible(true);
+            String tag = (String) fieldTag.get(objectBook);
+            System.out.println("reflectPrivateField tag = " + tag);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    // 反射私有方法
+    public static void reflectPrivateMethod() {
+        try {
+            Class<?> classBook = Class.forName("demo.knowledgepoints.reflect.Book");
+            Method methodBook = classBook.getDeclaredMethod("declaredMethod",int.class);
+            methodBook.setAccessible(true);
+            Object objectBook = classBook.newInstance();
+            String string = (String) methodBook.invoke(objectBook,1);
+
+            System.out.println("reflectPrivateMethod string = " + string);
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 }
