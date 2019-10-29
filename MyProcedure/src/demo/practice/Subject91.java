@@ -8,12 +8,13 @@ package demo.practice;
  */
 public class Subject91 {
     public static void main(String[] args) {
-        String str1 = "abbabaaabbabbaababbabbbbbabbbabbbabaaaaababababbbabababaabbababaabbbbbbaaaabababbbaabbbbaabbbbababababbaabbaababaabbbababababbbbaaabbbbbabaaaabbababbbbaababaabbababbbbbababbbabaaaaaaaabbbbbaabaaababaaaabb";
-        String str2 = "**aa*****ba*a*bb**aa*ab****a*aaaaaa***a*aaaa**bbabb*b*b**aaaaaaaaa*a********ba*bbb***a*ba*bb*bb**a*b*bb";
+        String str1 = "abbabaaabababbaababbabbbbbabbbabb";
+        String str2 = "**aa*abb***";
         System.out.println(new Subject91().isMatch(str1,str2));
     }
 
     boolean isMatch(String str, String pattern) {
+
         int s = 0, p = 0, match = 0, starIdx = -1;
         //±éÀúÕû¸ö×Ö·û´®
         while (s < str.length()){
