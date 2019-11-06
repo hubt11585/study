@@ -16,7 +16,7 @@ public class Doc2Pdf {
      * @param args
      */
     public static void main(String[] args) {
-        doc2pdf("E:/WorkSpace/MyProcedure/src/demo/knowledgepoints/DocToPdf/PDF/资金运营平台需求说明书V2.65.docx","E:/WorkSpace/MyProcedure/src/demo/knowledgepoints/DocToPdf/PDF/pdf1.pdf");
+        doc2pdf("src/demo/knowledgepoints/DocToPdf/PDF/资金运营平台需求说明书V2.65.docx","src/demo/knowledgepoints/DocToPdf/PDF/pdf1.pdf");
     }
 
     public static boolean getLicense() {

@@ -15,15 +15,15 @@ public class UserBeanProxy implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         UserBeanImpl userBean = (UserBeanImpl) targetObject;
-        String userName = userBean.getUserName();
+        String flag = userBean.getFlag();
         Object result = null;
 
         //х╗очеп╤о
-        if("ee".equals(userName) )
-        {
+        if("1".equals(flag) ){
             result = method.invoke(targetObject, args);
+        }else{
+            System.out.println("sorry , You don't have permission");
         }
-
         return result;
     }
 }
