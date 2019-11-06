@@ -16,14 +16,14 @@ public class Doc2Pdf {
      * @param args
      */
     public static void main(String[] args) {
-        doc2pdf("src/demo/knowledgepoints/DocToPdf/PDF/资金运营平台需求说明书V2.65.docx","src/demo/knowledgepoints/DocToPdf/PDF/pdf1.pdf");
+        doc2pdf("src/demo/knowledgepoints/DocToPdf/PDF/2019年全国I卷理科数学高考真题.docx","src/demo/knowledgepoints/DocToPdf/PDF/pdf1.pdf");
     }
 
     public static boolean getLicense() {
         boolean result = false;
         try {
-            File file = new File("E:\\GitHub\\study\\MyProcedure\\WebRoot\\WEB-INF\\classes\\license.xml"); // 新建一个空白pdf文档
-            InputStream is = new FileInputStream(file); // license.xml应放在..\WebRoot\WEB-INF\classes路径下
+            File file = new File("src/demo/knowledgepoints/DocToPdf/imp/license.xml"); // 新建一个空白pdf文档
+            InputStream is = new FileInputStream(file); // license.xml找个路径放即可。
             License aposeLic = new License();
             aposeLic.setLicense(is);
             result = true;
