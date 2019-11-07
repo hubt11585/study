@@ -19,8 +19,8 @@ public class CompressUtils{
     public static void main(String[] args) {
 
         List<File> adjustFiles = new ArrayList<>();
-        adjustFiles.add(new File("E:/GitHub/study/MyProcedure/src/demo/knowledgepoints/pdf/merge/pdf/1.docx"));
-        adjustFiles.add(new File("E:/GitHub/study/MyProcedure/src/demo/knowledgepoints/pdf/merge/pdf/2.pdf"));
+        adjustFiles.add(new File("src/demo/knowledgepoints/pdf/merge/pdf/1.docx"));
+        adjustFiles.add(new File("src/demo/knowledgepoints/pdf/merge/pdf/2.pdf"));
 
         ByteArrayOutputStream fos2 = new ByteArrayOutputStream();
         CompressUtils.toZip(adjustFiles,  fos2);
