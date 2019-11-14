@@ -1,5 +1,6 @@
 package demo.untils;
 
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -34,5 +35,34 @@ public class TimeUtil {
         long  initDelay = TimeUtil.getTimeMillis(time) - System.currentTimeMillis();
         initDelay = initDelay > 0 ? initDelay : oneDay + initDelay;
         return initDelay;
+    }
+
+    public static void main(String[] args) {
+        getTimeStamp();
+    }
+
+    public static Timestamp getTimeStamp(){
+        int date = 20191111;
+        int time = 0;
+        String dateTmp0 = date+srtChange(time+"");
+        String dateTmp = dateTmp0.substring(0,4)+"-"+dateTmp0.substring(4,6)+"-"+dateTmp0.substring(6,8)+" "
+                +dateTmp0.substring(8,10)+":"+dateTmp0.substring(10,12)+":"+dateTmp0.substring(12,14);
+        DateFormat dateFormat = new SimpleDateFormat("yy-MM-dd HH24:mm:ss");
+        try {
+            Date curDate = dateFormat.parse(dateTmp);
+            Timestamp timestamp = new Timestamp(curDate.getTime());
+            return timestamp;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static String srtChange(String str) {
+        String tmp = "";
+        for (int i = 0; i < 6-str.length() ; i++) {
+            tmp = tmp+"0";
+        }
+        return tmp+str;
     }
 }
