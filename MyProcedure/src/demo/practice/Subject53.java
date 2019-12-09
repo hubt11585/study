@@ -18,8 +18,8 @@ import java.util.List;
  */
 public class Subject53 {
     public static void main(String[] args) {
-        String s = "AB";
-        int numRows = 1;
+        String s = "LEETCODEISHIRING";
+        int numRows = 4;
         String str = convert(s,numRows);
         System.out.println(str);
     }

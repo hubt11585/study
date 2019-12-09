@@ -20,7 +20,17 @@ public class Subject68 {
         listNode01.next = listNode11;
 
         ListNode tmp = mergeTwoLists(listNode3,listNode01);
-        System.out.println(tmp);
+        StringBuilder stringBuilder = null;
+        while(tmp !=null){  //指向位置是否为空
+            if(stringBuilder == null){
+                stringBuilder = new StringBuilder();
+                stringBuilder.append(tmp.val);
+            }else{
+                stringBuilder.append(" -> "+ tmp.val);
+            }
+            tmp = tmp.next;    // 指向下一个节点
+        }
+        System.out.println(stringBuilder.toString());
     }
 
     /**

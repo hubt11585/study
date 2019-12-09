@@ -60,12 +60,6 @@ public class Subject84 {
         columns[col][d]++;
         boxes[idx][d]++;
         board[row][col] = (char)(d + '0');
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9; j++) {
-                System.out.print(board[i][j]+" ");
-            }
-            System.out.println();
-        }
     }
 
     public void removeNumber(int d, int row, int col) {

@@ -15,7 +15,19 @@ public class Subject71 {
         listNode1.next = listNode2;
         listNode2.next = listNode3;
         listNode3.next = listNode4;
-        System.out.println(swapPairs(listNode0));
+        ListNode tmp = swapPairs(listNode0);
+
+        StringBuilder stringBuilder = null;
+        while(tmp !=null){  //指向位置是否为空
+            if(stringBuilder == null){
+                stringBuilder = new StringBuilder();
+                stringBuilder.append(tmp.val);
+            }else{
+                stringBuilder.append(" -> "+ tmp.val);
+            }
+            tmp = tmp.next;    // 指向下一个节点
+        }
+        System.out.println(stringBuilder.toString());
     }
 
     /**

@@ -7,7 +7,6 @@ public class Subject90 {
     public static void main(String[] args) {
         String num1 = "123";
         String num2 = "456";
-        System.out.println(123*456);
         String nultiply = new Subject90().multiply(num1,num2);
         System.out.println(nultiply);
     }

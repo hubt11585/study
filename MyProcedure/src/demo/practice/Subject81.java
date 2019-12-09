@@ -8,7 +8,10 @@ package demo.practice;
 public class Subject81 {
     public static void main(String[] args) {
         int[] arr = new int[]{1};
-        System.out.println(new Subject81().searchRange(arr,1));
+        int[] result = new Subject81().searchRange(arr,1);
+        for (int i = 0; i < result.length; i++) {
+            System.out.print(result[i]+" ");
+        }
     }
 
     /**

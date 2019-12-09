@@ -22,7 +22,17 @@ public class Subject72 {
         listNode2.next = listNode3;
         listNode3.next = listNode4;
         ListNode listNode5 = new Subject72().reverseKGroup(listNode0,2);
-        System.out.println(listNode5);
+        StringBuilder stringBuilder = null;
+        while(listNode5 !=null){  //指向位置是否为空
+            if(stringBuilder == null){
+                stringBuilder = new StringBuilder();
+                stringBuilder.append(listNode5.val);
+            }else{
+                stringBuilder.append(" -> "+ listNode5.val);
+            }
+            listNode5 = listNode5.next;    // 指向下一个节点
+        }
+        System.out.println(stringBuilder.toString());
     }
 
     /**

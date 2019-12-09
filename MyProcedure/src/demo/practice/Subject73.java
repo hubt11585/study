@@ -6,10 +6,8 @@ package demo.practice;
  */
 public class Subject73 {
     public static void main(String[] args) {
-
-        int[] nums = new int[]{};
+        int[] nums = new int[]{1,2,3,4,5,5,6,6,7};
         System.out.println(new Subject73().removeDuplicates(nums));
-
     }
 
     /**

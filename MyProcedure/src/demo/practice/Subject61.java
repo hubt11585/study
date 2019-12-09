@@ -7,7 +7,7 @@ package demo.practice;
 public class Subject61 {
 
     public static void main(String[] args) {
-        String[] strs = new String[]{"","f","flight"};
+        String[] strs = new String[]{"f","fl","flight"};
         System.out.println(longestCommonPrefix(strs));
     }
 

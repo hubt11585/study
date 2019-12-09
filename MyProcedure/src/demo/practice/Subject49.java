@@ -26,7 +26,18 @@ public class Subject49 {
         l2.next = l21;
         l21.next = l22;
 
-        addTwoNumbers(l1,l2);
+        ListNode listNode = addTwoNumbers(l1,l2);
+        StringBuilder stringBuilder = null;
+        while(listNode !=null){  //指向位置是否为空
+            if(stringBuilder == null){
+                stringBuilder = new StringBuilder();
+                stringBuilder.append(listNode.val);
+            }else{
+                stringBuilder.append(" -> "+ listNode.val);
+            }
+            listNode = listNode.next;    // 指向下一个节点
+        }
+        System.out.println(stringBuilder.toString());
     }
 
     /**
@@ -35,7 +46,7 @@ public class Subject49 {
      * @param l2
      * @return
      */
-    public static ListNode  addTwoNumbers(ListNode l1, ListNode l2){
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2){
         int carry = 0;   //进位
         ListNode newListNode = new ListNode(0);
         ListNode tmpListNode ;

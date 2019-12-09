@@ -11,7 +11,10 @@ public class Subject48 {
     public static void main(String[] args) {
         int[] nums = new int[]{1,4,5,6,7,9,76,43,22,11};
         int target = 11;
-        twoSum(nums,target);
+        int[] result = twoSum(nums,target);
+        for (int i = 0; i < result.length; i++) {
+            System.out.println(result[i]);
+        }
     }
 
     /**

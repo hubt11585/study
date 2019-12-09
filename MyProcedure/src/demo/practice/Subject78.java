@@ -14,7 +14,9 @@ public class Subject78 {
     public static void main(String[] args) {
         int[] arr = new int[]{2,3,1,3,3};
         new Subject78().nextPermutation(arr);
-        System.out.println(arr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]+" ");
+        }
     }
 
     /**

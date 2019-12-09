@@ -21,7 +21,18 @@ public class Subject66 {
         listNode1.next = listNode2;
         listNode2.next = listNode3;
         listNode3.next = listNode4;
-        System.out.println(new Subject66().removeNthFromEnd(listNode0,1));
+        ListNode listNode = new Subject66().removeNthFromEnd(listNode0,1);
+        StringBuilder stringBuilder = null;
+        while(listNode !=null){  //指向位置是否为空
+            if(stringBuilder == null){
+                stringBuilder = new StringBuilder();
+                stringBuilder.append(listNode.val);
+            }else{
+                stringBuilder.append(" -> "+ listNode.val);
+            }
+            listNode = listNode.next;    // 指向下一个节点
+        }
+        System.out.println(stringBuilder.toString());
     }
 
     //公共变量

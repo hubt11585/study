@@ -55,7 +55,18 @@ public class Subject70 {
         listNode34.next = listNode33;
 
         ListNode[] arr = new ListNode[]{listNode6,listNode01,listNode02,listNode03,listNode11,listNode26,listNode34};
-        mergeKLists(arr);
+        ListNode tmp= mergeKLists(arr);
+        StringBuilder stringBuilder = null;
+        while(tmp !=null){  //指向位置是否为空
+            if(stringBuilder == null){
+                stringBuilder = new StringBuilder();
+                stringBuilder.append(tmp.val);
+            }else{
+                stringBuilder.append(" -> "+ tmp.val);
+            }
+            tmp = tmp.next;    // 指向下一个节点
+        }
+        System.out.println(stringBuilder.toString());
     }
 
     /**

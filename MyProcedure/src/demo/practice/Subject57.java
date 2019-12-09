@@ -11,24 +11,6 @@ import java.util.Map;
 public class Subject57 {
     public static void main(String[] args) {
         Map<String ,String>  map = new HashMap<>();
-        /*map.put("aab","c*a*b");    //true;
-        map.put("aaba","ab*a*c*a");  //false;
-        map.put("aaca","ab*a*c*a");  //true;
-
-        map.put("a",".*..a*");      //false;
-
-        map.put("cc","c");      //false;
-        map.put("dd","ddc*d*f*");      //true;
-
-        map.put("mississippi","mis*is*p*.");      //false;
-        map.put("bb","bbc");      //false;
-        map.put("baa",".bbc");      //false;
-        map.put("aa","a*");         //true;
-
-        map.put("ddd","d*ddd");    //true;
-        map.put("fff","f*f");    //true;
-        map.put("aaa","ab*ac*a");      //true;
-        map.put("bbbba",".*a*a");      //true;*/
         map.put("dddc","d*dddc");    //true;
         for (Map.Entry<String,String> entry :map.entrySet()){
             System.out.println(entry.getKey()+" : "+entry.getValue());

@@ -54,7 +54,6 @@ public class Subject96 {
     }
 
     public String dealChar(char[] ch) {
-        String str = "";
         Arrays.sort(ch);
         return new String(ch,0,ch.length);
     }
