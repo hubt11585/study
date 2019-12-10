@@ -1,8 +1,8 @@
-1. 序列化,反序列化(serializable)。
-3. 代理类（section）：通过代理接口InvocationHandler和Proxy，实现AOP效果。
-4. JDK1.8: stream的用法
-5. JDK1.8: Lambda 表达式   https://www.cnblogs.com/coprince/p/8692972.html
-7. 锁：乐观锁和悲观锁。
+1. 序列化,反序列化(serializable)。    ok
+3. 代理类（section）：通过代理接口InvocationHandler和Proxy，实现AOP效果。   ok
+4. JDK1.8: stream的用法   ok
+5. JDK1.8: Lambda 表达式   https://www.cnblogs.com/coprince/p/8692972.html    ok
+7. 锁：乐观锁和悲观锁。     ok
 8. ArrayDeque双端队列。
 8. 区块链。
 6. Lombok : 通过注解，自动实现setter/getter、equals、canEqual、hashCode、toString方法。
@@ -12,22 +12,24 @@
 10.Gradle: 项目管理工具
 11.thymclcat ：代替JSP
 12 h2： 内存数据库
-13 pdf word 转PDF： https://zgzdlm.iteye.com/blog/1558877
+13 pdf word 转PDF： https://zgzdlm.iteye.com/blog/1558877      ok
 14 Unsafe : java 不安全类，可以处理存储地址。
-15 Excel ：https://www.cnblogs.com/hhhshct/p/7255915.html
-16 reflect 反射：通过类的class获取到实体类和方法
-17 http ：通过Http请求调用。
-18 scheduledtask ：线程管理案例：https://blog.csdn.net/money9sun/article/details/88575704?tdsourcetag=s_pctim_aiomsg
-19 volatile ：https://www.cnblogs.com/sunrunzhi/p/3930297.html
+15 Excel ：https://www.cnblogs.com/hhhshct/p/7255915.html      ok
+           https://www.cnblogs.com/jike1219/p/11182303.html
+16 reflect 反射：通过类的class获取到实体类和方法       ok
+17 http ：通过Http请求调用。    ok
+18 scheduledtask ：线程管理案例：https://blog.csdn.net/money9sun/article/details/88575704?tdsourcetag=s_pctim_aiomsg     ok
+19 volatile ：https://www.cnblogs.com/sunrunzhi/p/3930297.html     ok
 20 base64编码: https://blog.csdn.net/wo541075754/article/details/81734770
-               https://www.cnblogs.com/alter888/p/9140732.html
-21 compress: 压缩包，zip压缩。
+               https://www.cnblogs.com/alter888/p/9140732.html        ok
+
+21 compress: 压缩包，zip压缩。    ok
 22.classLoader ：http://blog.itpub.net/31561269/viewspace-2222522/
-23 enumdemo: https://www.cnblogs.com/hyl8218/p/5088287.html
+23 enumdemo: https://www.cnblogs.com/hyl8218/p/5088287.html    ok
 24 functionpointer ：函数指针https://blog.csdn.net/maosijunzi/article/details/38616357
-25 如何编写属于自己的注解。
-26 正则表达式：
-27 QuickSort :快速排序（https://www.cnblogs.com/jiansen/p/7343867.html）。
+25 如何编写属于自己的注解。      ok
+26 正则表达式：       ok
+27 QuickSort :快速排序（https://www.cnblogs.com/jiansen/p/7343867.html）。    ok
 28 原码，反码，补码的加减乘除运算
 https://wenku.baidu.com/view/d07ae21aa76e58fafab00383.html
 29 栈（Stack）
@@ -36,7 +38,9 @@ https://wenku.baidu.com/view/d07ae21aa76e58fafab00383.html
 32 Spring RestTemplate
 33 swagger配置
 34 dubbo,webservice,restful   https://blog.csdn.net/sujin_/article/details/83865124
-
+35 Json 详细处理      ok
+36 加密方式：(密码相同加密结果也不同)
+37 MD5加密：      ok
 
 spring boot 打包和执行包
 https://blog.csdn.net/qq_36159851/article/details/79699193

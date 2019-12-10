@@ -4,9 +4,7 @@ import java.util.Base64;
 
 /**
  * Java 8的java.util套件中，新增了Base64的类别，可以用来处理Base64的编码与解码
- *
  * 跟操作系统无关，因为我是64位系统。其实你打印的是 int 类型的， 1个int 4个字节 所以32位。
- *
  * GBK采用双字节8位表示，总体编码范围为 8140 -- FEFE，首字节在 81 -- FE 之间，尾字节在 40 -- FE 之间。
  * ASCII是7位编码，只使用前7位，第8位补0，所以转换成整数始终为正数，而GBK是8位编码，也就是说一个字节中的第8位可以为1，如1010 1101，而将其转换成byte类型时，byte值为10101101，以补码存储，第8位被当成符号位，当然是负数了，值为：-83。
  * “何”字的GBK编码是：BA CE（1011 1010 1100 1110），两个字节第8位都为1，对byte类型来说，都被理解为最高位符号位。这样值就变成-70和-50了。
@@ -16,8 +14,8 @@ public class MyBase64 {
         try {
             Base64.Decoder decoder = Base64.getDecoder();
             Base64.Encoder encoder = Base64.getEncoder();
-            String text = "通用汽车";
-            byte[] textByte = text.getBytes("UTF-8");
+            String text = "通";
+            byte[] textByte = text.getBytes("GBK");
             for(int i =0; i<textByte.length ;i++){
                 System.out.println(intToByte8(textByte[i]));
             }
@@ -25,55 +23,7 @@ public class MyBase64 {
             String encodedText = encoder.encodeToString(textByte);
             System.out.println(encodedText);
             //解码
-            System.out.println(new String(decoder.decode(encodedText), "UTF-8"));
-
-            System.out.println(intToByte8(112));
-
-            System.out.println(intToByte8(112));
-            System.out.println(intToByte8(97));
-            System.out.println(intToByte8(103));
-            System.out.println(intToByte8(101));
-            System.out.println(intToByte8(78));
-            System.out.println(intToByte8(111));
-            System.out.println(intToByte8(61));
-            System.out.println(intToByte8(49));
-            System.out.println(intToByte8(38));
-            System.out.println(intToByte8(112));
-            System.out.println(intToByte8( 97));
-            System.out.println(intToByte8(103));
-            System.out.println(intToByte8(101));
-            System.out.println(intToByte8(83));
-            System.out.println(intToByte8(105));
-            System.out.println(intToByte8(122));
-            System.out.println(intToByte8(101));
-            System.out.println(intToByte8(61));
-            System.out.println(intToByte8(49));
-            System.out.println(intToByte8(48));
-            System.out.println(intToByte8(48));
-            System.out.println(intToByte8(38));
-            System.out.println(intToByte8(102));
-            System.out.println(intToByte8(117));
-            System.out.println(intToByte8(110));
-            System.out.println(intToByte8(100));
-            System.out.println(intToByte8(73));
-            System.out.println(intToByte8(100));
-            System.out.println(intToByte8(61));
-            System.out.println(intToByte8(38));
-            System.out.println(intToByte8(98));
-            System.out.println(intToByte8(117));
-            System.out.println(intToByte8(115));
-            System.out.println(intToByte8(105));
-            System.out.println(intToByte8(110));
-            System.out.println(intToByte8(101));
-            System.out.println(intToByte8(115));
-            System.out.println(intToByte8(115));
-            System.out.println(intToByte8(67));
-            System.out.println(intToByte8(108));
-            System.out.println(intToByte8(97));
-            System.out.println(intToByte8(115));
-            System.out.println(intToByte8(115));
-            System.out.println(intToByte8(61));
-
+            System.out.println(new String(decoder.decode(encodedText), "GBK"));
 
         } catch (Exception e) {
             e.printStackTrace();
