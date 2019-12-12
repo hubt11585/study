@@ -15,25 +15,26 @@ import javax.mail.internet.MimeMultipart;
 import java.util.Properties;
 
 public class Send163MailUtil {
-    static String HOST = "smtp.163.com"; // smtp服务器
     static String FROM = "18767126115@163.com"; // 发件人地址
-    static String TO = "18767126115@163.com"; // 收件人地址
     static String AFFIX = "src/demo/knowledgepoints/pdf/merge/pdf/1.docx"; // 附件地址
     static String AFFIXNAME = "呼呼.docx"; // 附件名称
     static String USER = "18767126115@163.com"; // 用户名
     static String PWD = "hubt11585"; // 163的授权码
     static String SUBJECT = "呼呼呼"; // 邮件标题
-    static String[] TOS = new String[]{"18767126115@163.com"};
-
+    static String[] TOS = new String[]{"18767126115@163.com"};  // 收件人地址
+    static String context = "邮件正文";   //邮件正文
     /**
      * 发送邮件
      */
-    public static void send(String context) {
-        Properties props = new Properties();
-        props.put("mail.smtp.host", HOST);//设置发送邮件的邮件服务器的属性（这里使用网易的smtp服务器）
+    public static void main(String[] args) {
+        Properties props = new Properties();  //smtp服务器
+        props.put("mail.smtp.host", "smtp.163.com");//设置发送邮件的邮件服务器的属性（这里使用网易的smtp服务器）
         props.put("mail.smtp.auth", "true");  //需要经过授权，也就是有户名和密码的校验，这样才能通过验证（一定要有这一条）
+        props.put("mail.smtp.ssl.enable", "true");// 设置是否使用ssl安全连接 ---一般都使用
+        props.put("mail.debug", "true");// 设置是否显示debug信息 true 会在控制台显示相关信息
+        props.put("mail.smtp.port", 465);// 端口号
+
         Session session = Session.getDefaultInstance(props);//用props对象构建一个session
-        session.setDebug(true);
         MimeMessage message = new MimeMessage(session);//用session为参数定义消息对象
         try {
             message.setFrom(new InternetAddress(FROM));// 加载发件人地址
@@ -59,15 +60,11 @@ public class Send163MailUtil {
             message.setContent(multipart);//将multipart对象放到message中
             message.saveChanges(); //保存邮件
             Transport transport = session.getTransport("smtp");//发送邮件
-            transport.connect(HOST, USER, PWD);//连接服务器的邮箱
+            transport.connect(USER, PWD);//连接服务器的邮箱
             transport.sendMessage(message, message.getAllRecipients());//把邮件发送出去
             transport.close();//关闭连接
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        send("内容");
     }
 }
