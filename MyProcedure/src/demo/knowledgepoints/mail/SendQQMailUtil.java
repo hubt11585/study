@@ -16,14 +16,14 @@ import java.util.Properties;
 
 public class SendQQMailUtil {
 
-    static String FROM = "1050750201@qq.com"; // 发件人地址
-    static String AFFIX = "src/demo/knowledgepoints/pdf/merge/pdf/1.docx"; // 附件地址
-    static String AFFIXNAME = "呼呼.docx"; // 附件名称
-    static String USER = "1050750201@qq.com"; // 用户名
-    static String PWD = "fvkrzukmawixbfag"; // 163的授权码
-    static String SUBJECT = "呼呼呼"; // 邮件标题
-    static String[] TOS = new String[]{"1050750201@qq.com","862155275@qq.com"};  // 收件人地址
-    static String context = "邮件正文";   //邮件正文
+    static String FROM = ""; // 发件人地址
+    static String AFFIX = ""; // 附件地址
+    static String AFFIXNAME = ""; // 附件名称
+    static String USER = ""; // 用户名
+    static String PWD = ""; // QQ的授权码
+    static String SUBJECT = ""; // 邮件标题
+    static String[] TOS = new String[]{""};  // 收件人地址
+    static String context = "";   //邮件正文
 
     public static void main(String[] args) {
         Properties properties = new Properties();
@@ -62,7 +62,7 @@ public class SendQQMailUtil {
             multipart.addBodyPart(messageBodyPart);
             message.setContent(multipart);//将multipart对象放到message中
 
-            // 得到邮差对象
+            // 得到邮箱对象
             Transport transport = session.getTransport();
             // 连接自己的邮箱账户
             transport.connect(USER, PWD);// 密码为QQ邮箱开通的stmp服务后得到的客户端授权码

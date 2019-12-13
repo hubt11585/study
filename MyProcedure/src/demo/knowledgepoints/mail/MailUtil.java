@@ -1,111 +1,67 @@
 package demo.knowledgepoints.mail;
 
 import javax.activation.DataHandler;
+import javax.activation.DataSource;
 import javax.activation.FileDataSource;
+import javax.mail.BodyPart;
 import javax.mail.Message;
+import javax.mail.Multipart;
 import javax.mail.Session;
 import javax.mail.Transport;
-import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-import javax.mail.internet.MimeUtility;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
 import java.util.Properties;
-import java.util.stream.Collectors;
 
 public class MailUtil {
 
-    public static void sendMail(MailInfo mailInfo) throws Exception{
+    static String FROM = ""; // 发件人地址
+    static String AFFIX = ""; // 附件地址
+    static String AFFIXNAME = ""; // 附件名称
+    static String USER = ""; // 用户名
+    static String PWD = ""; // 密码
+    static String SUBJECT = ""; // 邮件标题
+    static String[] TOS = new String[]{""};  // 收件人地址
+    static String context = "";   //邮件正文
 
-        Properties properties = new Properties();
-        //设置用户的认证方式
-        properties.setProperty("mail.smtp.auth","true");
-        //设置传输协议
-        properties.setProperty("mail.transport.protocol", "smtp");
-        //设置发件人的SMTP服务器地址
-        properties.setProperty("mail.smtp.host", mailInfo.getSendSever());
+    public static void main(String[] args) {
+        Properties props = new Properties();  //smtp服务器
+        props.put("mail.smtp.host", "");//设置发送邮件的邮件服务器的属性（这里使用网易的smtp服务器）
+        props.put("mail.smtp.auth", "true");  //需要经过授权，也就是有户名和密码的校验，这样才能通过验证（一定要有这一条）
+        props.put("mail.debug", "true");// 设置是否显示debug信息 true 会在控制台显示相关信息
 
-        //2、创建定义整个应用程序所需的环境信息的 Session 对象
-        Session session = Session.getInstance(properties);
-        //设置调试信息在控制台打印出来
-        session.setDebug(true);
-
-        //3、创建邮件的实例对象
-        Message message = getMimeMessage(session,mailInfo);
-        //4、根据session对象获取邮件传输对象Transport
-        Transport transport = session.getTransport();
-        //设置发件人的账户名和密码
-        transport.connect(mailInfo.getSendUser(),BizSecurity.desDecrypt(mailInfo.getSenderPwd(),BizSecurity.key1,BizSecurity.key2,BizSecurity.key3));
-        //发送邮件，并发送到所有收件人地址，message.getAllRecipients() 获取到的是在创建邮件对象时添加的所有收件人, 抄送人, 密送人
-        transport.sendMessage(message,message.getAllRecipients());
-        //如果只想发送给指定的人，可以如下写法
-        //transport.sendMessage(message,new Address[]{new InternetAddress("")});
-        //5、关闭邮件连接
-        transport.close();
-    }
-
-
-    public static MimeMessage getMimeMessage(Session session, MailInfo mailInfo) throws Exception {
-        //1.创建一封邮件的实例对象
-        MimeMessage mimeMessage = new MimeMessage(session);
-
-        //2.设置发件人地址
-        mimeMessage.setFrom(new InternetAddress(mailInfo.getSenderAddress()));
-        /**
-         * 3.设置收件人地址（可以增加多个收件人、抄送、密送），即下面这一行代码书写多行
-         * MimeMessage.RecipientType.TO:发送
-         * MimeMessage.RecipientType.CC：抄送
-         * MimeMessage.RecipientType.BCC：密送
-         */
-        String[] receivers = mailInfo.getReceiverAddress().split(",");
-
-        List<InternetAddress> addressList =  Arrays.stream(receivers).filter(x->x.contains("@")).map(x-> {
-            try {
-                return new InternetAddress(x);
-            } catch (AddressException e) {
-                System.out.println("邮箱格式不正确："+x);
-                return null;
+        Session session = Session.getDefaultInstance(props);//用props对象构建一个session
+        MimeMessage message = new MimeMessage(session);//用session为参数定义消息对象
+        try {
+            message.setFrom(new InternetAddress(FROM));// 加载发件人地址
+            InternetAddress[] sendTo = new InternetAddress[TOS.length]; // 加载收件人地址
+            for (int i = 0; i < TOS.length; i++) {
+                sendTo[i] = new InternetAddress(TOS[i]);
             }
-        }).filter(x->x!=null).collect(Collectors.toList());
-
-        InternetAddress[] receiverAddresses = new InternetAddress[addressList.size()];
-        addressList.toArray(receiverAddresses);
-        mimeMessage.setRecipients(MimeMessage.RecipientType.TO, receiverAddresses);
-        //4.设置邮件主题
-        mimeMessage.setSubject(mailInfo.getTitle(),"UTF-8");
-
-        // 6. 创建文本"节点"
-        MimeBodyPart text = new MimeBodyPart();
-        // 为文本添加内容
-        text.setContent(mailInfo.getContent(),"text/html;charset=UTF-8");
-
-        // 7. 设置文本 和 附件 的关系（合成一个大的混合"节点" / Multipart ）
-        MimeMultipart mm = new MimeMultipart();
-        mm.addBodyPart(text);
-
-        //添加附件
-        for (int i = 0; i < 2 ; i++) {
-            MimeBodyPart attachment = new MimeBodyPart();
-            DataHandler dh = new DataHandler(new FileDataSource("src/demo/knowledgepoints/pdf/merge/pdf/1.docx"));
-            attachment.setDataHandler(dh);
-            attachment.setFileName(MimeUtility.encodeText("啦啦.docx"));
-            mm.addBodyPart(attachment); // 如果有多个附件，可以创建多个多次添加
+            message.addRecipients(Message.RecipientType.TO,sendTo);
+            message.addRecipients(MimeMessage.RecipientType.CC, InternetAddress.parse(FROM));//设置在发送给收信人之前给自己（发送方）抄送一份，不然会被当成垃圾邮件，报554错
+            message.setSubject(SUBJECT);//加载标题
+            Multipart multipart = new MimeMultipart();//向multipart对象中添加邮件的各个部分内容，包括文本内容和附件
+            BodyPart contentPart = new MimeBodyPart();//设置邮件的文本内容
+            contentPart.setText(context);
+            multipart.addBodyPart(contentPart);
+            if(!AFFIX.isEmpty()){//添加附件
+                BodyPart messageBodyPart = new MimeBodyPart();
+                DataSource source = new FileDataSource(AFFIX);
+                messageBodyPart.setDataHandler(new DataHandler(source));//添加附件的内容
+                sun.misc.BASE64Encoder enc = new sun.misc.BASE64Encoder();//添加附件的标题
+                messageBodyPart.setFileName("=?GBK?B?"+ enc.encode(AFFIXNAME.getBytes()) + "?=");
+                multipart.addBodyPart(messageBodyPart);
+            }
+            message.setContent(multipart);//将multipart对象放到message中
+            message.saveChanges(); //保存邮件
+            Transport transport = session.getTransport("smtp");//发送邮件
+            transport.connect(USER, PWD);//连接服务器的邮箱
+            transport.sendMessage(message, message.getAllRecipients());//把邮件发送出去
+            transport.close();//关闭连接
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-        mm.setSubType("mixed");
-        // 8. 设置整个邮件的关系（将最终的混合"节点"作为邮件的内容添加到邮件对象）
-        mimeMessage.setContent(mm);
-
-        //设置邮件的发送时间,默认立即发送
-        mimeMessage.setSentDate(new Date());
-
-        return mimeMessage;
     }
-
-
-
 }

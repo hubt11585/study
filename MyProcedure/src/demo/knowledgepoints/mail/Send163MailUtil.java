@@ -15,17 +15,15 @@ import javax.mail.internet.MimeMultipart;
 import java.util.Properties;
 
 public class Send163MailUtil {
-    static String FROM = "18767126115@163.com"; // 发件人地址
-    static String AFFIX = "src/demo/knowledgepoints/pdf/merge/pdf/1.docx"; // 附件地址
-    static String AFFIXNAME = "呼呼.docx"; // 附件名称
-    static String USER = "18767126115@163.com"; // 用户名
-    static String PWD = "hubt11585"; // 163的授权码
-    static String SUBJECT = "呼呼呼"; // 邮件标题
-    static String[] TOS = new String[]{"18767126115@163.com"};  // 收件人地址
-    static String context = "邮件正文";   //邮件正文
-    /**
-     * 发送邮件
-     */
+    static String FROM = ""; // 发件人地址
+    static String AFFIX = ""; // 附件地址
+    static String AFFIXNAME = ""; // 附件名称
+    static String USER = ""; // 用户名
+    static String PWD = ""; // 163的授权码
+    static String SUBJECT = ""; // 邮件标题
+    static String[] TOS = new String[]{""};  // 收件人地址
+    static String context = "";   //邮件正文
+
     public static void main(String[] args) {
         Properties props = new Properties();  //smtp服务器
         props.put("mail.smtp.host", "smtp.163.com");//设置发送邮件的邮件服务器的属性（这里使用网易的smtp服务器）
