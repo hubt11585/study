@@ -36,7 +36,7 @@ public class Subject98 {
     int queens[];
 
     public static void main(String[] args) {
-        List<List<String>> listList = new Subject98().solveNQueens(6);
+        List<List<String>> listList = new Subject98().solveNQueens(1);
         System.out.println(listList);
     }
 
@@ -102,6 +102,7 @@ public class Subject98 {
                 // »ØËÝ¡£
                 removeQueen(row, col);
             }
+
         }
     }
 

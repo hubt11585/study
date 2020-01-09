@@ -33,14 +33,15 @@
 28 原码，反码，补码的加减乘除运算
 https://wenku.baidu.com/view/d07ae21aa76e58fafab00383.html
 29 栈（Stack）
-30 对接邮箱。
-31 Http请求。
+30 对接邮箱。      ok
+31 Http请求。       ok
 32 Spring RestTemplate
 33 swagger配置
 34 dubbo,webservice,restful   https://blog.csdn.net/sujin_/article/details/83865124
 35 Json 详细处理      ok
-36 加密方式：(密码相同加密结果也不同)
+36 加密方式：(密码相同加密结果也不同)    ok
 37 MD5加密：      ok
+38 读写DBF文件
 
 spring boot 打包和执行包
 https://blog.csdn.net/qq_36159851/article/details/79699193

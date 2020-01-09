@@ -4,6 +4,5 @@
 /MyProcedure/MyProcedure.iml
 /MyProcedure/src/demo/test/
 
-/SpringMVC/TreeHole/.idea/
-/SpringMVC/TreeHole/out/
-/SpringMVC/TreeHole/Treehole.iml
+
+/icecastle-vue/node_modules
