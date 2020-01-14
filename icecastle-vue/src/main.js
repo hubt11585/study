@@ -1,24 +1,18 @@
 import Vue from 'vue'
-import routes from './routes'
+import App from './App'
+import router from './router'
+import store from './store/'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
 
-const app = new Vue({
-  el: '#app',
-  data: {
-    currentRoute: window.location.pathname
-  },
-  computed: {
-    ViewComponent () {
-      const matchingView = routes[this.currentRoute]
-      return matchingView
-        ? require('./pages/' + matchingView + '.vue')
-        : require('./pages/404.vue')
-    }
-  },
-  render (h) {
-    return h(this.ViewComponent)
-  }
-})
+Vue.config.productionTip = false;
 
-window.addEventListener('popstate', () => {
-  app.currentRoute = window.location.pathname
+Vue.use(ElementUI);
+
+new Vue({
+	el: '#app',
+	router,
+	store,
+	template: '<App/>',
+	components: { App }
 })
