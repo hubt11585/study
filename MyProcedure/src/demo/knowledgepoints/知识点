@@ -41,7 +41,9 @@ https://wenku.baidu.com/view/d07ae21aa76e58fafab00383.html
 35 Json 详细处理      ok
 36 加密方式：(密码相同加密结果也不同)    ok
 37 MD5加密：      ok
-38 读写DBF文件
+38 读写DBF文件     ok
+39 sec加密
+40 雪花算法 SnowFlake    ok    https://blog.csdn.net/nsxqf/article/details/85850232
 
 spring boot 打包和执行包
 https://blog.csdn.net/qq_36159851/article/details/79699193

@@ -23,7 +23,7 @@ public class Subject9 {
         for(int i :list){
             sum = sum + i;
         }
-        if(num == sum){
+        if(num == sum && num != 1){
             System.out.println("ÍêÊı£º"+num);
         }
     }
