@@ -30,7 +30,7 @@ public class SendQQMailUtil {
         Properties properties = new Properties();
         properties.put("mail.transport.protocol", "smtp");// 连接协议
         properties.put("mail.smtp.host", "smtp.qq.com");// 主机名
-        properties.put("mail.smtp.port", 465);// 端口号
+        //properties.put("mail.smtp.port", 25);// 端口号
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.ssl.enable", "true");// 设置是否使用ssl安全连接 ---一般都使用
         properties.put("mail.debug", "true");// 设置是否显示debug信息 true 会在控制台显示相关信息
