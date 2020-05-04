@@ -20,7 +20,7 @@ public class Subject20 {
             return 2.0/1.0;
         }else{
             double a = getMolecule(num);
-            double b = num;
+            double b = getMolecule(num-1);
             return sum(num-1)+ a/b;
         }
     }

@@ -13,20 +13,25 @@ public class Subject35 {
         System.out.println("请输入人数：");
         Scanner scanner = new Scanner(System.in);
         int n= scanner.nextInt();
-        numberGame(n);
+        System.out.println( numberGame(n));
+        numberGame1(n);
     }
 
-    /**
-     * 数字游戏
-     * @param n
-     */
-    private static void numberGame(int n) {
+    private static void numberGame1(int n) {
         List<Integer> list = new ArrayList<>();
         /****************给50个人编号******************/
         for (int i = 1; i <= n; i++) {
             list.add(i);
         }
         endGameByNum(list,1);
+    }
+
+    /**
+     * 数字游戏
+     * @param n
+     */
+    private static int numberGame(int n) {
+        return n == 1 ? n : (numberGame(n - 1) + 3 - 1) % n + 1;
     }
 
     /**
