@@ -15,7 +15,7 @@ public class MyBase64 {
         try {
             Base64.Decoder decoder = Base64.getDecoder();
             Base64.Encoder encoder = Base64.getEncoder();
-            String text = "Dbzq*5689";
+            String text = "Hbt1068877";
             byte[] textByte = text.getBytes("GBK");
             for(int i =0; i<textByte.length ;i++){
                 System.out.println(intToByte8(textByte[i]));

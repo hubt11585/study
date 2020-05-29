@@ -59,7 +59,7 @@ public class SendQQMailUtil {
             DataSource source = new FileDataSource(AFFIX);
             messageBodyPart.setDataHandler(new DataHandler(source));//添加附件的内容
             sun.misc.BASE64Encoder enc = new sun.misc.BASE64Encoder();//添加附件的标题
-            messageBodyPart.setFileName("=?GBK?B?"+ enc.encode(AFFIXNAME.getBytes()) + "?=");
+            messageBodyPart.setFileName( enc.encode(AFFIXNAME.getBytes()) );
             multipart.addBodyPart(messageBodyPart);
             message.setContent(multipart);//将multipart对象放到message中
 

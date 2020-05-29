@@ -16,18 +16,18 @@ import java.util.Properties;
 
 public class MailUtil {
 
-    static String FROM = ""; // 发件人地址
-    static String AFFIX = ""; // 附件地址
-    static String AFFIXNAME = ""; // 附件名称
-    static String USER = ""; // 用户名
-    static String PWD = ""; // 密码
-    static String SUBJECT = ""; // 邮件标题
-    static String[] TOS = new String[]{""};  // 收件人地址
-    static String context = "";   //邮件正文
+    static String FROM = "hubt11585@hundsun.com"; // 发件人地址
+    static String AFFIX = "src/demo/knowledgepoints/pdf/merge/pdf/1.docx"; // 附件地址
+    static String AFFIXNAME = "划款"; // 附件名称
+    static String USER = "hubt11585"; // 用户名
+    static String PWD = "Hbt1068877"; // 密码
+    static String SUBJECT = "ssssss"; // 邮件标题
+    static String[] TOS = new String[]{"hubt11585@hundsun.com"};  // 收件人地址
+    static String context = "ddddddddddddd";   //邮件正文
 
     public static void main(String[] args) {
         Properties props = new Properties();  //smtp服务器
-        props.put("mail.smtp.host", "");//设置发送邮件的邮件服务器的属性（这里使用网易的smtp服务器）
+        props.put("mail.smtp.host", "mail.hundsun.com");//设置发送邮件的邮件服务器的属性（这里使用网易的smtp服务器）
         props.put("mail.smtp.auth", "true");  //需要经过授权，也就是有户名和密码的校验，这样才能通过验证（一定要有这一条）
         props.put("mail.debug", "true");// 设置是否显示debug信息 true 会在控制台显示相关信息
 
