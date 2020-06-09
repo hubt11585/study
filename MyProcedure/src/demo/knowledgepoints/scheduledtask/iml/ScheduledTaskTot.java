@@ -1,6 +1,6 @@
 package demo.knowledgepoints.scheduledtask.iml;
 
-import demo.untils.StringUntil;
+import demo.untils.StringUtil;
 import demo.untils.TimeUtil;
 
 import java.lang.reflect.Method;
@@ -41,7 +41,7 @@ public class ScheduledTaskTot {
             System.out.println("---------------------------------");
             try {
                 //在beginTime 到 endTime 之间才执行。
-                if(StringUntil.isNotBlank(beginTime) && StringUntil.isNotBlank(endTime)){
+                if(StringUtil.isNotBlank(beginTime) && StringUtil.isNotBlank(endTime)){
                     if(TimeUtil.getTimeMillis(beginTime) - System.currentTimeMillis() >= 0 && TimeUtil.getTimeMillis(endTime) - System.currentTimeMillis() <= 0){
                         Class<?> cls = Class.forName(className);
                         Method method1 = cls.getMethod(method);

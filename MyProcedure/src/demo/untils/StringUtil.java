@@ -2,7 +2,7 @@ package demo.untils;
 
 import java.util.Objects;
 
-public class StringUntil {
+public class StringUtil {
 
     public static void main(String[] args) {
         String str = "1.23.";

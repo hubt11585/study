@@ -10,11 +10,17 @@ package demo.practice;
  * "312"
  * "321"
  * 给定n 和k，返回第k个排列。
+ *
+ * 输入: n = 3, k = 3
+ * 输出: "213"
+ *
+ * 输入: n = 4, k = 9
+ * 输出: "2314"
  */
 public class Subject107 {
 
     public static void main(String[] args) {
-        new Subject107().getPermutation(1,2)
+        new Subject107().getPermutation(1,2);
     }
 
     public String getPermutation(int n, int k) {
