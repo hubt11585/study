@@ -3,7 +3,7 @@ package demo.knowledgepoints.base64;
 import java.util.Base64;
 
 /**
- * RGJ6cSo1Njg5
+ * RGJ6cSo1Njg5 088392
  * Java 8的java.util套件中，新增了Base64的类别，可以用来处理Base64的编码与解码
  * 跟操作系统无关，因为我是64位系统。其实你打印的是 int 类型的， 1个int 4个字节 所以32位。
  * GBK采用双字节8位表示，总体编码范围为 8140 -- FEFE，首字节在 81 -- FE 之间，尾字节在 40 -- FE 之间。
