@@ -9,7 +9,7 @@ package demo.practice;
 public class Subject21And22 {
 
     public static void main(String[] args) {
-        int sum = factorialSum(20);
+        long sum = factorialSum(20);
         System.out.println("1+2!+3!+¡­+20!Ö®ºÍ£º"+sum);
     }
 
@@ -18,8 +18,8 @@ public class Subject21And22 {
      * @param num
      * @return
      */
-    private static int factorialSum(int num) {
-        int sum = 0;
+    private static long factorialSum(int num) {
+        long sum = 0;
         for (int j = 1; j <= num; j++) {
             sum = sum+factorial(j);
         }
@@ -31,7 +31,7 @@ public class Subject21And22 {
      * @param num
      * @return
      */
-    public static int factorial(int num){
+    public static long factorial(int num){
         if(num == 1){
             return 1;
         }else{

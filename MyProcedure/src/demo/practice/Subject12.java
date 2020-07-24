@@ -14,7 +14,7 @@ public class Subject12 {
     public static void main(String[] args) {
         System.out.println("请输入您的业绩：");
         Scanner scanner = new Scanner(System.in);
-        double profit= scanner.nextInt();
+        double profit= scanner.nextDouble();
         System.out.println("您得到的提成为："+premium(profit));
     }
 
