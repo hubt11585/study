@@ -44,21 +44,24 @@ https://wenku.baidu.com/view/d07ae21aa76e58fafab00383.html
 38 读写DBF文件     ok
 39 sec加密
 40 雪花算法 SnowFlake    ok    https://blog.csdn.net/nsxqf/article/details/85850232
-41 MySQL 设置主从配置：https://www.cnblogs.com/huiyichanmian/p/11246668.html
+41 MySQL 设置主从配置：https://www.cnblogs.com/huiyichanmian/p/11246668.html    ok
 42 手写一个Lombok https://www.cnblogs.com/vipstone/p/12597756.html
 43 浅谈对称加密与非对称加密 https://www.cnblogs.com/fasionchan/p/symmetric-asymmetric-encryption.html
-44 CGLib 动态代理
+44 CGLib 动态代理    ok
 45 内省（Introspector）
 46 红黑树  https://www.cnblogs.com/lycroseup/p/7324229.html
 47 https://blog.csdn.net/zhangcc233/article/details/83654640 电报（Telegram）
 48 https://www.cnblogs.com/fengmo2427/p/9591671.html   license
 49 https://www.cnblogs.com/yulia/p/6369894.html       rabbitmq如何测试
-50 idea 设置特效编码
+50 java 克隆，深拷贝和浅拷贝。      ok 
 51 JSR303 规范
 52 dom4j ok
 53 open jdk https://mp.weixin.qq.com/s?__biz=MzIwOTE2MDQyNA==&mid=2247483876&idx=1&sn=f6b811646570734793bd9a2bc3233d7a&chksm=97795063a00ed9755ada3f709405a34b2aa4b6481d7234318243e9b1b874e6af17fda4f4d9a4&mpshare=1&scene=23&srcid=0708nVOWunwvm3P4r5wye6k0&sharer_sharetime=1594185993996&sharer_shareid=6ec848b7d3468eb268e8ec32bf7340e5#rd
 54 yearing  Mysql 审核工具。
 55 pt-osc  https://www.jianshu.com/p/c739d12afbef
+56 Hutool 工具类
+57 Elasticsearch  https://www.jianshu.com/p/d48c32423789
+58 jvisualvm   Java内存使用情况
 
 spring boot 打包和执行包
 https://blog.csdn.net/qq_36159851/article/details/79699193
