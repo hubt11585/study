@@ -1,4 +1,4 @@
-package demo.clone;
+package demo.knowledgepoints.clone;
 
 public class CloneTest {
 

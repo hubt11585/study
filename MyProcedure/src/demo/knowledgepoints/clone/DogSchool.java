@@ -1,4 +1,4 @@
-package demo.clone;
+package demo.knowledgepoints.clone;
 
 public class DogSchool implements Cloneable{
     public String address;
