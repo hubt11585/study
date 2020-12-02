@@ -63,6 +63,10 @@ https://wenku.baidu.com/view/d07ae21aa76e58fafab00383.html
 57 Elasticsearch  https://www.jianshu.com/p/d48c32423789
 58 jvisualvm   Java内存使用情况
 59 transient 关键字，序列化和反序列的时候，不需要的标记。
+60 阻塞队列 ok
+61 分割迭代器spliterator
+62 自旋锁
+63 NIO    ok
 
 spring boot 打包和执行包
 https://blog.csdn.net/qq_36159851/article/details/79699193

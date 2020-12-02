@@ -11,15 +11,15 @@ public class Subject1 {
     public static void main(String[] args) {
         System.out.print("?????????????????????????????");
 
-        Scanner scanner=new Scanner(System.in);
+       // Scanner scanner=new Scanner(System.in);
 
-        int n=scanner.nextInt();//????????????
+        //int n=scanner.nextInt(); //????????????
 
-        System.out.println(test(n));
+   //     System.out.println(test(n));
 
-        System.out.println(fun(n));
+        System.out.println(fun(30000));
 
-        scanner.close();
+      //  scanner.close();
     }
 
     /**

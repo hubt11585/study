@@ -51,7 +51,7 @@ public class Momory {
          * 调用allocateMemory分配内存
          */
         long memoryAddress = unsafe.allocateMemory(size);
-
+        
         /*
          * 将100写入到内存中
          */
