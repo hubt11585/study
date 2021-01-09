@@ -67,6 +67,9 @@ https://wenku.baidu.com/view/d07ae21aa76e58fafab00383.html
 61 分割迭代器spliterator
 62 自旋锁
 63 NIO    ok
+65 Vitess MySQL分片
+66 fork/join
+67 compiler   动态编译
 
 spring boot 打包和执行包
 https://blog.csdn.net/qq_36159851/article/details/79699193
